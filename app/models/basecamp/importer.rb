@@ -51,21 +51,7 @@ module Basecamp
             :project_id => local_project.id
           }
           local_list = ::TodoList.find_or_initialize_by_basecamp_id(list.id, todo_list_attributes)
-
-          #
-          # Import TodoItems
-          #
-          todo_items = local_list.fetch_items
-          local_items = todo_items.map do |item|
-            item_attributes = {
-              :basecamp_id => item.id,
-              :name => item.content,
-              :todo_list_id => local_list.id
-            }
-            ::TodoItem.find_or_initialize_by_basecamp_id(item.id, item_attributes)
-          end
-
-          local_list.todo_items << local_items
+          local_list.sync
           local_list.save
         end
       end
