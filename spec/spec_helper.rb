@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'spork'
+require 'vcr'
 
 Spork.prefork do
   # Loading more in this block will cause your tests to run faster. However, 
@@ -14,6 +15,16 @@ Spork.prefork do
   # Requires supporting ruby files with custom matchers and macros, etc,
   # in spec/support/ and its subdirectories.
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
+
+  # VCR Configuration
+  VCR.config do |c|
+    c.cassette_library_dir     = 'spec/cassettes'
+    c.stub_with :fakeweb
+
+    # Record only new interactions.
+    # (http://relishapp.com/myronmarston/vcr/docs/record-modes/new-episodes)
+    c.default_cassette_options = { :record => :new_episodes }
+  end
 
   RSpec.configure do |config|
     # == Mock Framework
@@ -33,6 +44,9 @@ Spork.prefork do
     # instead of true.
     config.use_transactional_fixtures = true
 
+    # Use VCR
+    config.extend VCR::RSpec::Macros
+
     def capture(stream)
       begin
         stream = stream.to_s
@@ -45,6 +59,8 @@ Spork.prefork do
 
       result
     end
+
+    alias :silence :capture
   end
 end
 
