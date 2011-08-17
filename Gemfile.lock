@@ -65,6 +65,8 @@ GEM
       multi_json (~> 1.0)
     ffi (1.0.9)
     growl (1.0.3)
+    growl_notify (0.0.1)
+      rb-appscript
     guard (0.6.1)
       thor (~> 0.14.6)
     guard-rspec (0.4.2)
@@ -122,6 +124,7 @@ GEM
       rdoc (~> 3.4)
       thor (~> 0.14.6)
     rake (0.9.2)
+    rb-appscript (0.6.1)
     rb-fsevent (0.4.3)
     rbx-require-relative (0.0.5)
     rdoc (3.9.2)
@@ -183,6 +186,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 3.1.0.rc)
   growl
+  growl_notify
   guard
   guard-rspec
   guard-spork

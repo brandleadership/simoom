@@ -28,6 +28,7 @@ group :development, :test do
   gem 'growl'
   gem 'capybara'
   gem 'rb-fsevent'
+  gem 'growl_notify'
 
   # Deployment gems
   gem 'capistrano'
