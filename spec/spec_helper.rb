@@ -32,8 +32,20 @@ Spork.prefork do
     # examples within a transaction, remove the following line or assign false
     # instead of true.
     config.use_transactional_fixtures = true
-  end
 
+    def capture(stream)
+      begin
+        stream = stream.to_s
+        eval "$#{stream} = StringIO.new"
+        yield
+        result = eval("$#{stream}").string
+      ensure
+        eval("$#{stream} = #{stream.upcase}")
+      end
+
+      result
+    end
+  end
 end
 
 Spork.each_run do
