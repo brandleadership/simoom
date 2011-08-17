@@ -6,7 +6,7 @@ gem 'rails', '3.1.0.rc5'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-
+gem 'mysql2'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -18,16 +18,19 @@ end
 
 gem 'jquery-rails'
 
-# Use unicorn as the web server
-# gem 'unicorn'
+group :development, :test do
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'ruby-debug'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-spork'
+  gem 'growl'
+  gem 'capybara'
+  gem 'rb-fsevent'
 
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
-
-group :test do
-  # Pretty printed test output
-  gem 'turn', :require => false
+  # Deployment gems
+  gem 'capistrano'
+  gem 'capistrano-ext'
+  gem 'capistrano_colors'
 end
