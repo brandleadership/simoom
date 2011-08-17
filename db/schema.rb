@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20110817124234) do
   create_table "projects", :force => true do |t|
     t.integer  "basecamp_id"
     t.string   "name"
-    t.integer  "p_number"
+    t.string   "p_number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

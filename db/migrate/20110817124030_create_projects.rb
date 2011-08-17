@@ -3,7 +3,7 @@ class CreateProjects < ActiveRecord::Migration
     create_table :projects do |t|
       t.integer :basecamp_id
       t.string :name
-      t.integer :p_number
+      t.string :p_number
 
       t.timestamps
     end
