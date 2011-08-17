@@ -28,6 +28,7 @@ group :development, :test do
   gem 'rb-fsevent'
   gem 'growl'
   gem 'vcr'
+  gem 'fakeweb'
 
   # Deployment gems
   gem 'capistrano'
