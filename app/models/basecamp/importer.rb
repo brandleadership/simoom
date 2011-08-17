@@ -39,7 +39,7 @@ module Basecamp
         #
         # Import TodoLists
         #
-        puts "updating todo lists for #{}"
+        puts "updating todo lists for #{project_name}"
         todo_lists = Basecamp::TodoList.find(:all, :params => { :project_id => project.id, :filter => 'all' })
         puts "#{project.name} has #{todo_lists.size} todo lists"
 
@@ -51,25 +51,24 @@ module Basecamp
             :project_id => local_project.id
           }
           local_list = ::TodoList.find_or_initialize_by_basecamp_id(list.id, todo_list_attributes)
-          local_list.save
 
           #
           # Import TodoItems
           #
-          todo_items = Basecamp::TodoItem.find(:all, :params => { :todo_list_id => list.id, :filter => 'all' })
-          todo_items.each do |item|
+          todo_items = local_list.fetch_items
+          local_items = todo_items.map do |item|
             item_attributes = {
               :basecamp_id => item.id,
               :name => item.content,
               :todo_list_id => local_list.id
             }
-            ::TodoItem.find_or_initialize_by_basecamp_id(list.id, item_attributes).save
+            ::TodoItem.find_or_initialize_by_basecamp_id(item.id, item_attributes)
           end
+
+          local_list.todo_items << local_items
+          local_list.save
         end
-
-
       end
     end
-
   end
 end
