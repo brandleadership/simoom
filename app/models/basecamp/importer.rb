@@ -13,14 +13,26 @@ module Basecamp
     #
     # Sync Local DB with Basecamp
     #
-    def perform
+    def self.perform
       projects = Basecamp::Project.find(:all)
-      projects.delete_if { |p| !!(p.name =~ PROJECT_MATCHER) }
+
+      puts "Found #{projects.size} projects"
+
+      projects = projects.reject { |p| !(p.name =~ PROJECT_MATCHER) }
+
+      puts "#{projects.size} projects match naming conventions"
 
       projects.each do |project|
-        # find or initialize project
-        # Project.find_or_initialize_by_basecamp_id()
-        #
+        puts "importing #{project.name}"
+        project_name, p_number = project.name.split('-')
+        project_attributes = {
+          :basecamp_id => project.id,
+          :name => project_name.strip,
+          :p_number => p_number.strip
+        }
+
+        ::Project.find_or_initialize_by_basecamp_id(project.id, project_attributes).save
+
         # get todolists of project
         # exclude todolists that have [exclude] in their name
         # find or initialize todolists with todo items
