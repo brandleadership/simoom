@@ -1,12 +1,10 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc5'
-
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
+gem 'rails', '3.1.0.rc6'
 gem 'sqlite3'
 gem 'mysql2'
+
+gem 'compass', :git => 'git://github.com/chriseppstein/compass.git', :branch => 'rails31'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -28,7 +26,8 @@ group :development, :test do
   gem 'growl'
   gem 'capybara'
   gem 'rb-fsevent'
-  gem 'growl_notify'
+  gem 'growl'
+  gem 'vcr'
 
   # Deployment gems
   gem 'capistrano'
