@@ -29,6 +29,7 @@ group :development, :test do
   gem 'growl'
   gem 'vcr'
   gem 'fakeweb'
+  gem 'database_cleaner'
 
   # Deployment gems
   gem 'capistrano'

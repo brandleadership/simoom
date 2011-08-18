@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'spork'
 require 'vcr'
+require 'database_cleaner'
 
 Spork.prefork do
   # Loading more in this block will cause your tests to run faster. However, 
@@ -43,6 +44,17 @@ Spork.prefork do
     # examples within a transaction, remove the following line or assign false
     # instead of true.
     config.use_transactional_fixtures = true
+
+    # Database Cleaner setup
+    DatabaseCleaner.strategy = :truncation
+
+    config.before(:each) do
+      DatabaseCleaner.start
+    end
+
+    config.after(:each) do
+      DatabaseCleaner.clean
+    end
 
     # Use VCR
     config.extend VCR::RSpec::Macros

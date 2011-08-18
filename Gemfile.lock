@@ -70,6 +70,7 @@ GEM
       execjs
     coffee-script-source (1.1.2)
     columnize (0.3.4)
+    database_cleaner (0.6.7)
     diff-lcs (1.1.2)
     erubis (2.7.0)
     execjs (1.2.4)
@@ -196,6 +197,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 3.1.0.rc)
   compass!
+  database_cleaner
   fakeweb
   growl
   guard
