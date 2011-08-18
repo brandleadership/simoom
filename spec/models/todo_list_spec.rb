@@ -11,7 +11,7 @@ describe TodoList do
 
     it 'returns the items as an array' do
       VCR.use_cassette('items_for_list', :record => :new_episodes) do
-        TodoList.new(:basecamp_id => 12574902).fetch_items.size.should be 10
+        TodoList.new(:basecamp_id => 15703209).fetch_items.size.should be 4
       end
     end
 
@@ -20,7 +20,7 @@ describe TodoList do
   describe '#sync' do
 
     before :each do
-      @list = TodoList.new(:basecamp_id => 12574902)
+      @list = TodoList.new(:basecamp_id => 15703209)
     end
 
     it 'fetches the items from basecamp' do

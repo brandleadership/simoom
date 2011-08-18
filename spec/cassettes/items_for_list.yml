@@ -1,0 +1,109 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: https://787943ebcb50d29176bc83a623830f487e439581:password@scdummyaccount.basecamphq.com:443/todo_items.xml?filter=all&todo_list_id=15703209
+    body: 
+    headers: 
+      accept: 
+      - application/xml
+      authorization: 
+      - Basic Nzg3OTQzZWJjYjUwZDI5MTc2YmM4M2E2MjM4MzBmNDg3ZTQzOTU4MTpwYXNzd29yZA==
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-throttle-max: 
+      - "500"
+      strict-transport-security: 
+      - max-age=31536000
+      etag: 
+      - "\"aa9e267ba379d09a98fb9263ae2d04da\""
+      content-type: 
+      - application/xml; charset=utf-8
+      x-throttle-horizon: 
+      - "2011-08-18T06:37:50Z"
+      x-runtime: 
+      - "29"
+      x-throttle-count: 
+      - "2"
+      date: 
+      - Thu, 18 Aug 2011 06:37:41 GMT
+      server: 
+      - nginx/0.8.33
+      set-cookie: 
+      - transition_token=BAhbB2kDtcCNSXU6CVRpbWUNR94bwO1wm5YGOh9AbWFyc2hhbF93aXRoX3V0Y19jb2VyY2lvblQ%3D--36bef45cea5532d926d895ad4f51b99ee558eec6; path=/; secure
+      - _basecamp_session=BAh7BzoPc2Vzc2lvbl9pZCIlODYwNmFkMWE1MzU2MzU3OGY5NWQ4MzQxZmE0NmYxMzY6EGlkZW50aXR5X2lkaQP0tRM%3D--fca1088e37f7a7dcbea8b325609133a435a0302b; path=/; HttpOnly; secure
+      cache-control: 
+      - private, max-age=0, must-revalidate
+      status: 
+      - 200 OK
+      transfer-encoding: 
+      - chunked
+    body: |
+      <?xml version="1.0" encoding="UTF-8"?>
+      <todo-items type="array">
+        <todo-item>
+          <commented-at type="datetime" nil="true"></commented-at>
+          <comments-count type="integer">0</comments-count>
+          <completed type="boolean">false</completed>
+          <content>asdasd</content>
+          <created-at type="datetime">2011-08-18T06:21:14Z</created-at>
+          <creator-id type="integer">7904395</creator-id>
+          <due-at type="datetime" nil="true"></due-at>
+          <id type="integer">103585809</id>
+          <position type="integer">1</position>
+          <todo-list-id type="integer">15703209</todo-list-id>
+          <updated-at type="datetime">2011-08-18T06:21:14Z</updated-at>
+          <created-on type="datetime" deprecated="true">2011-08-18T06:21:14Z</created-on>
+          <creator-name>Felipe Kaufmann</creator-name>
+        </todo-item>
+        <todo-item>
+          <commented-at type="datetime" nil="true"></commented-at>
+          <comments-count type="integer">0</comments-count>
+          <completed type="boolean">false</completed>
+          <content>another item</content>
+          <created-at type="datetime">2011-08-18T06:21:19Z</created-at>
+          <creator-id type="integer">7904395</creator-id>
+          <due-at type="datetime" nil="true"></due-at>
+          <id type="integer">103585814</id>
+          <position type="integer">2</position>
+          <todo-list-id type="integer">15703209</todo-list-id>
+          <updated-at type="datetime">2011-08-18T06:21:19Z</updated-at>
+          <created-on type="datetime" deprecated="true">2011-08-18T06:21:19Z</created-on>
+          <creator-name>Felipe Kaufmann</creator-name>
+        </todo-item>
+        <todo-item>
+          <commented-at type="datetime" nil="true"></commented-at>
+          <comments-count type="integer">0</comments-count>
+          <completed type="boolean">false</completed>
+          <content>more items</content>
+          <created-at type="datetime">2011-08-18T06:21:22Z</created-at>
+          <creator-id type="integer">7904395</creator-id>
+          <due-at type="datetime" nil="true"></due-at>
+          <id type="integer">103585816</id>
+          <position type="integer">3</position>
+          <todo-list-id type="integer">15703209</todo-list-id>
+          <updated-at type="datetime">2011-08-18T06:21:22Z</updated-at>
+          <created-on type="datetime" deprecated="true">2011-08-18T06:21:22Z</created-on>
+          <creator-name>Felipe Kaufmann</creator-name>
+        </todo-item>
+        <todo-item>
+          <commented-at type="datetime" nil="true"></commented-at>
+          <comments-count type="integer">0</comments-count>
+          <completed type="boolean">false</completed>
+          <content>even more items</content>
+          <created-at type="datetime">2011-08-18T06:21:25Z</created-at>
+          <creator-id type="integer">7904395</creator-id>
+          <due-at type="datetime" nil="true"></due-at>
+          <id type="integer">103585821</id>
+          <position type="integer">4</position>
+          <todo-list-id type="integer">15703209</todo-list-id>
+          <updated-at type="datetime">2011-08-18T06:21:25Z</updated-at>
+          <created-on type="datetime" deprecated="true">2011-08-18T06:21:25Z</created-on>
+          <creator-name>Felipe Kaufmann</creator-name>
+        </todo-item>
+      </todo-items>
+
+    http_version: "1.1"
