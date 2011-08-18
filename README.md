@@ -19,3 +19,9 @@
 - run `script/rails runner 'Basecamp::Importer.perform'` to sync with your basecamp account
 
 - to get debug messages, use the :debug flag: `Basecamp::Importer.perform(:debug)`
+
+## Development
+
+- use `bundle exec rake` to run all specs
+
+- use `bundle exec guard -c` for BDD
