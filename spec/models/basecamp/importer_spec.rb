@@ -9,9 +9,9 @@ describe Basecamp::Importer do
         silence(:stdout) { Basecamp::Importer.perform }
       end
 
-      Project.all.size.should be 14
-      TodoList.all.size.should be 90
-      TodoItem.all.size.should be 393
+      Project.all.size.should be 2
+      TodoList.all.size.should be 3
+      TodoItem.all.size.should be 10
     end
 
   end
