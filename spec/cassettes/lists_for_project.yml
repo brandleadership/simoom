@@ -1,0 +1,311 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: https://787943ebcb50d29176bc83a623830f487e439581:password@scdummyaccount.basecamphq.com:443/todo_lists.xml?basecamp_id=1
+    body: 
+    headers: 
+      accept: 
+      - application/xml
+      authorization: 
+      - Basic Nzg3OTQzZWJjYjUwZDI5MTc2YmM4M2E2MjM4MzBmNDg3ZTQzOTU4MTpwYXNzd29yZA==
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-throttle-max: 
+      - "500"
+      strict-transport-security: 
+      - max-age=31536000
+      etag: 
+      - "\"813ff7b0d7d8eafc2914cc8ebe210c3e\""
+      content-type: 
+      - application/xml; charset=utf-8
+      x-throttle-horizon: 
+      - "2011-08-18T06:54:10Z"
+      x-runtime: 
+      - "20"
+      x-throttle-count: 
+      - "1"
+      date: 
+      - Thu, 18 Aug 2011 06:54:03 GMT
+      server: 
+      - nginx/0.8.33
+      set-cookie: 
+      - transition_token=BAhbB2kDtcCNSXU6CVRpbWUNR94bwARnN9gGOh9AbWFyc2hhbF93aXRoX3V0Y19jb2VyY2lvblQ%3D--64a55772edf3c8765f604a92fa3ee3cc73594731; path=/; secure
+      - _basecamp_session=BAh7BzoPc2Vzc2lvbl9pZCIlM2MxNGZmNmQ3ODE5YTVkZDViZGM1ZGY2NDM1MTVkN2Y6EGlkZW50aXR5X2lkaQP0tRM%3D--cace861c19e4907b5d5f726413ae8de331488324; path=/; HttpOnly; secure
+      cache-control: 
+      - private, max-age=0, must-revalidate
+      status: 
+      - 200 OK
+      transfer-encoding: 
+      - chunked
+    body: |
+      <?xml version="1.0" encoding="UTF-8"?>
+      <todo-lists type="array"/>
+
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: https://787943ebcb50d29176bc83a623830f487e439581:password@scdummyaccount.basecamphq.com:443/todo_lists.xml?basecamp_id=2
+    body: 
+    headers: 
+      accept: 
+      - application/xml
+      authorization: 
+      - Basic Nzg3OTQzZWJjYjUwZDI5MTc2YmM4M2E2MjM4MzBmNDg3ZTQzOTU4MTpwYXNzd29yZA==
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-throttle-max: 
+      - "500"
+      etag: 
+      - "\"813ff7b0d7d8eafc2914cc8ebe210c3e\""
+      strict-transport-security: 
+      - max-age=31536000
+      content-type: 
+      - application/xml; charset=utf-8
+      x-throttle-horizon: 
+      - "2011-08-18T06:54:20Z"
+      server: 
+      - nginx/0.8.33
+      date: 
+      - Thu, 18 Aug 2011 06:54:14 GMT
+      x-throttle-count: 
+      - "1"
+      x-runtime: 
+      - "23"
+      set-cookie: 
+      - transition_token=BAhbB2kDtcCNSXU6CVRpbWUNR94bwNaF6dgGOh9AbWFyc2hhbF93aXRoX3V0Y19jb2VyY2lvblQ%3D--7bebaaf20b8d6c0f414c8b5e6a9e8ac0e7bd7f8c; path=/; secure
+      - _basecamp_session=BAh7BzoPc2Vzc2lvbl9pZCIlYzY4N2IzNjg3NjJiMTRiYjMzNGJkNjUwNjg3NWE3YmQ6EGlkZW50aXR5X2lkaQP0tRM%3D--daca44f5ca7643be20de01b0c004fedee445016b; path=/; HttpOnly; secure
+      status: 
+      - 200 OK
+      cache-control: 
+      - private, max-age=0, must-revalidate
+      transfer-encoding: 
+      - chunked
+    body: |
+      <?xml version="1.0" encoding="UTF-8"?>
+      <todo-lists type="array"/>
+
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: https://787943ebcb50d29176bc83a623830f487e439581:password@scdummyaccount.basecamphq.com:443/todo_lists.xml?basecamp_id=7809235
+    body: 
+    headers: 
+      accept: 
+      - application/xml
+      authorization: 
+      - Basic Nzg3OTQzZWJjYjUwZDI5MTc2YmM4M2E2MjM4MzBmNDg3ZTQzOTU4MTpwYXNzd29yZA==
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-throttle-max: 
+      - "500"
+      strict-transport-security: 
+      - max-age=31536000
+      etag: 
+      - "\"813ff7b0d7d8eafc2914cc8ebe210c3e\""
+      content-type: 
+      - application/xml; charset=utf-8
+      x-throttle-horizon: 
+      - "2011-08-18T06:55:40Z"
+      x-runtime: 
+      - "22"
+      x-throttle-count: 
+      - "1"
+      date: 
+      - Thu, 18 Aug 2011 06:55:31 GMT
+      server: 
+      - nginx/0.8.33
+      set-cookie: 
+      - transition_token=BAhbB2kDtcCNSXU6CVRpbWUNR94bwDG9890GOh9AbWFyc2hhbF93aXRoX3V0Y19jb2VyY2lvblQ%3D--a0b97f1bd63ab47fbda5b353d8ed9119eb318286; path=/; secure
+      - _basecamp_session=BAh7BzoPc2Vzc2lvbl9pZCIlNmM2Y2VhYWEzOTBlNzA2OGM3MmE3MzAxMWI0NWFiZGQ6EGlkZW50aXR5X2lkaQP0tRM%3D--c46b2e4e7e1f5af486236ef09d2524a4ffc95e1b; path=/; HttpOnly; secure
+      cache-control: 
+      - private, max-age=0, must-revalidate
+      status: 
+      - 200 OK
+      transfer-encoding: 
+      - chunked
+    body: |
+      <?xml version="1.0" encoding="UTF-8"?>
+      <todo-lists type="array"/>
+
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: https://787943ebcb50d29176bc83a623830f487e439581:password@scdummyaccount.basecamphq.com:443/todo_lists.xml?project_id=7809235
+    body: 
+    headers: 
+      accept: 
+      - application/xml
+      authorization: 
+      - Basic Nzg3OTQzZWJjYjUwZDI5MTc2YmM4M2E2MjM4MzBmNDg3ZTQzOTU4MTpwYXNzd29yZA==
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-throttle-max: 
+      - "500"
+      etag: 
+      - "\"b42ba057e5b444493e7e160666b0252e\""
+      strict-transport-security: 
+      - max-age=31536000
+      content-type: 
+      - application/xml; charset=utf-8
+      x-throttle-horizon: 
+      - "2011-08-18T06:56:30Z"
+      server: 
+      - nginx/0.8.33
+      date: 
+      - Thu, 18 Aug 2011 06:56:20 GMT
+      x-throttle-count: 
+      - "1"
+      x-runtime: 
+      - "16"
+      set-cookie: 
+      - transition_token=BAhbB2kDtcCNSXU6CVRpbWUNR94bwN2iR%2BEGOh9AbWFyc2hhbF93aXRoX3V0Y19jb2VyY2lvblQ%3D--9610d0450bc1a37a18607af2c301695cddf103a8; path=/; secure
+      - _basecamp_session=BAh7BzoPc2Vzc2lvbl9pZCIlM2MxYTc1YzFkZWEwYjhkNWUyNmExOWQ5N2VmNDhiYjE6EGlkZW50aXR5X2lkaQP0tRM%3D--71a74c31fd12bf07228c8a9ab098e6b68195f8dd; path=/; HttpOnly; secure
+      status: 
+      - 200 OK
+      cache-control: 
+      - private, max-age=0, must-revalidate
+      transfer-encoding: 
+      - chunked
+    body: |
+      <?xml version="1.0" encoding="UTF-8"?>
+      <todo-lists type="array">
+        <todo-list>
+          <completed-count type="integer">0</completed-count>
+          <description>4h Some Dummy Tasks</description>
+          <id type="integer">15703209</id>
+          <milestone-id type="integer" nil="true"></milestone-id>
+          <name>Dummy Todo List</name>
+          <position type="integer">1</position>
+          <private type="boolean">false</private>
+          <project-id type="integer">7809235</project-id>
+          <tracked type="boolean">false</tracked>
+          <uncompleted-count type="integer">4</uncompleted-count>
+          <complete>false</complete>
+        </todo-list>
+      </todo-lists>
+
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: https://787943ebcb50d29176bc83a623830f487e439581:password@scdummyaccount.basecamphq.com:443/todo_items.xml?filter=all&todo_list_id=15703209
+    body: 
+    headers: 
+      accept: 
+      - application/xml
+      authorization: 
+      - Basic Nzg3OTQzZWJjYjUwZDI5MTc2YmM4M2E2MjM4MzBmNDg3ZTQzOTU4MTpwYXNzd29yZA==
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-throttle-max: 
+      - "500"
+      strict-transport-security: 
+      - max-age=31536000
+      etag: 
+      - "\"aa9e267ba379d09a98fb9263ae2d04da\""
+      content-type: 
+      - application/xml; charset=utf-8
+      x-throttle-horizon: 
+      - "2011-08-18T07:47:50Z"
+      x-runtime: 
+      - "31"
+      x-throttle-count: 
+      - "1"
+      date: 
+      - Thu, 18 Aug 2011 07:47:48 GMT
+      server: 
+      - nginx/0.8.33
+      set-cookie: 
+      - transition_token=BAhbB2kDtcCNSXU6CVRpbWUNSN4bwKHnAL8GOh9AbWFyc2hhbF93aXRoX3V0Y19jb2VyY2lvblQ%3D--32400c17a42ef0dbfe3e343422754872917e1e0a; path=/; secure
+      - _basecamp_session=BAh7BzoPc2Vzc2lvbl9pZCIlMTdlMDA0YTIwYTJjYjUxNmQ5MDJlODI1ZDNiYmFhMWY6EGlkZW50aXR5X2lkaQP0tRM%3D--671c3a1a051d1f901124b075c916930566f55333; path=/; HttpOnly; secure
+      cache-control: 
+      - private, max-age=0, must-revalidate
+      status: 
+      - 200 OK
+      transfer-encoding: 
+      - chunked
+    body: |
+      <?xml version="1.0" encoding="UTF-8"?>
+      <todo-items type="array">
+        <todo-item>
+          <commented-at type="datetime" nil="true"></commented-at>
+          <comments-count type="integer">0</comments-count>
+          <completed type="boolean">false</completed>
+          <content>asdasd</content>
+          <created-at type="datetime">2011-08-18T06:21:14Z</created-at>
+          <creator-id type="integer">7904395</creator-id>
+          <due-at type="datetime" nil="true"></due-at>
+          <id type="integer">103585809</id>
+          <position type="integer">1</position>
+          <todo-list-id type="integer">15703209</todo-list-id>
+          <updated-at type="datetime">2011-08-18T06:21:14Z</updated-at>
+          <created-on type="datetime" deprecated="true">2011-08-18T06:21:14Z</created-on>
+          <creator-name>Felipe Kaufmann</creator-name>
+        </todo-item>
+        <todo-item>
+          <commented-at type="datetime" nil="true"></commented-at>
+          <comments-count type="integer">0</comments-count>
+          <completed type="boolean">false</completed>
+          <content>another item</content>
+          <created-at type="datetime">2011-08-18T06:21:19Z</created-at>
+          <creator-id type="integer">7904395</creator-id>
+          <due-at type="datetime" nil="true"></due-at>
+          <id type="integer">103585814</id>
+          <position type="integer">2</position>
+          <todo-list-id type="integer">15703209</todo-list-id>
+          <updated-at type="datetime">2011-08-18T06:21:19Z</updated-at>
+          <created-on type="datetime" deprecated="true">2011-08-18T06:21:19Z</created-on>
+          <creator-name>Felipe Kaufmann</creator-name>
+        </todo-item>
+        <todo-item>
+          <commented-at type="datetime" nil="true"></commented-at>
+          <comments-count type="integer">0</comments-count>
+          <completed type="boolean">false</completed>
+          <content>more items</content>
+          <created-at type="datetime">2011-08-18T06:21:22Z</created-at>
+          <creator-id type="integer">7904395</creator-id>
+          <due-at type="datetime" nil="true"></due-at>
+          <id type="integer">103585816</id>
+          <position type="integer">3</position>
+          <todo-list-id type="integer">15703209</todo-list-id>
+          <updated-at type="datetime">2011-08-18T06:21:22Z</updated-at>
+          <created-on type="datetime" deprecated="true">2011-08-18T06:21:22Z</created-on>
+          <creator-name>Felipe Kaufmann</creator-name>
+        </todo-item>
+        <todo-item>
+          <commented-at type="datetime" nil="true"></commented-at>
+          <comments-count type="integer">0</comments-count>
+          <completed type="boolean">false</completed>
+          <content>even more items</content>
+          <created-at type="datetime">2011-08-18T06:21:25Z</created-at>
+          <creator-id type="integer">7904395</creator-id>
+          <due-at type="datetime" nil="true"></due-at>
+          <id type="integer">103585821</id>
+          <position type="integer">4</position>
+          <todo-list-id type="integer">15703209</todo-list-id>
+          <updated-at type="datetime">2011-08-18T06:21:25Z</updated-at>
+          <created-on type="datetime" deprecated="true">2011-08-18T06:21:25Z</created-on>
+          <creator-name>Felipe Kaufmann</creator-name>
+        </todo-item>
+      </todo-items>
+
+    http_version: "1.1"

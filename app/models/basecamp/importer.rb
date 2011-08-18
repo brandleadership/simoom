@@ -34,26 +34,8 @@ module Basecamp
         }
 
         local_project = ::Project.find_or_initialize_by_basecamp_id(project.id, project_attributes)
+        local_project.sync
         local_project.save
-
-        #
-        # Import TodoLists
-        #
-        puts "updating todo lists for #{project_name}"
-        todo_lists = Basecamp::TodoList.find(:all, :params => { :project_id => project.id, :filter => 'all' })
-        puts "#{project.name} has #{todo_lists.size} todo lists"
-
-        project_todos = todo_lists.each do |list|
-          todo_list_attributes = {
-            :basecamp_id => list.id,
-            :name => list.name,
-            :estimate => (list.description.present? ? list.description.match(ESTIMATE_MATCHER).to_s : nil),
-            :project_id => local_project.id
-          }
-          local_list = ::TodoList.find_or_initialize_by_basecamp_id(list.id, todo_list_attributes)
-          local_list.sync
-          local_list.save
-        end
       end
     end
   end

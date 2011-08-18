@@ -2,44 +2,48 @@ require 'spec_helper'
 
 describe Project do
 
-  # TODO: Do the same as the todo list but also recurse on childs
-  #       in sync method
+  describe '#fetch_items' do
 
-  # describe '#fetch_items' do
+    it 'fetches all todo_lists of the project' do
+      Basecamp::TodoList.should_receive(:find)
+      Project.new(:basecamp_id => 1).fetch_items
+    end
 
-  #   it 'fetches all todo_items in the list' do
-  #     Basecamp::TodoItem.should_receive(:find)
-  #     TodoList.new(:basecamp_id => 1).fetch_items
-  #   end
+    it 'returns the items as an array' do
+      VCR.use_cassette('lists_for_project', :record => :new_episodes) do
+        Project.new(:basecamp_id => 7809235).fetch_items.size.should be 1
+      end
+    end
 
-  #   it 'returns the items as an array' do
-  #     VCR.use_cassette('items_for_list', :record => :new_episodes) do
-  #       TodoList.new(:basecamp_id => 12574902).fetch_items.size.should be 10
-  #     end
-  #   end
+  end
 
-  # end
+  describe '#sync' do
 
-  # describe '#sync' do
+    before :each do
+      @project = Project.new(:basecamp_id => 7809235)
+    end
 
-  #   before :each do
-  #     @list = TodoList.new(:basecamp_id => 12574902)
-  #   end
+    it 'fetches the todo lists from basecamp' do
+      VCR.use_cassette('lists_for_project', :record => :new_episodes) do
+        @project.should_receive(:fetch_items)
+        @project.sync
+      end
+    end
 
-  #   it 'fetches the items from basecamp' do
-  #     VCR.use_cassette('items_for_list', :record => :new_episodes) do
-  #       @list.should_receive(:fetch_items)
-  #       @list.sync
-  #     end
-  #   end
+    it 'maps the basecamp items to local child objects' do
+      VCR.use_cassette('lists_for_project', :record => :new_episodes) do
+        @project.sync
+        @project.todo_lists.each { |e| e.should be_a TodoList }
+      end
+    end
 
-  #   it 'maps the basecamp items to local child objects' do
-  #     VCR.use_cassette('items_for_list', :record => :new_episodes) do
-  #       @list.sync
-  #       @list.todo_items.each { |e| e.should be_a TodoItem }
-  #     end
-  #   end
+    it 'syncs recursively on every todo_list' do
+      VCR.use_cassette('lists_for_project', :record => :new_episodes) do
+        @project.sync
+        @project.todo_lists.each { |e| e.todo_items.should_not be_blank }
+      end
+    end
 
-  # end
+  end
 
 end
