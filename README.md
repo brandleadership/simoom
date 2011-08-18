@@ -12,9 +12,10 @@
 
 - `rake db:migrate`
 
-- run `Basecamp::Importer.perform` to sync with your basecamp account
+- run `script/rails runner 'Basecamp::Importer.perform'` to sync with your basecamp account
 
 ## Synchronization with Basecamp
 
-For synchronization with basecamp, use `Basecamp::Importer.perform`.
-This will update existing records and create new ones.
+- run `script/rails runner 'Basecamp::Importer.perform'` to sync with your basecamp account
+
+- to get debug messages, use the :debug flag: `Basecamp::Importer.perform(:debug)`

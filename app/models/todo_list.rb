@@ -13,10 +13,12 @@ class TodoList < ActiveRecord::Base
   #
   # Map the child items from basecamp to local child objects
   #
-  def sync
+  def sync(log_level = :info)
+    @logger = Basecamp::ImportLogger.new(log_level)
     basecamp_items = fetch_items
 
     unless basecamp_items.blank?
+      @logger.log :debug, "found #{basecamp_items.size} Todo Items for #{name}"
       todo_items << basecamp_items.map do |item|
         item_attributes = {
           :basecamp_id => item.id,

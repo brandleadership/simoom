@@ -17,11 +17,11 @@ describe Basecamp::ImportLogger do
       end
 
       it 'logs info messages' do
-        capture(:stdout) { @logger.log('a message', :info) }.should == ("a message\n")
+        capture(:stdout) { @logger.log(:info, 'a message') }.should == ("#{Time.now.strftime("%d.%m.%y %T")} || a message\n")
       end
 
       it 'logs debug messages' do
-        capture(:stdout) { @logger.log('a message', :debug) }.should == ("a message\n")
+        capture(:stdout) { @logger.log(:debug, 'a message') }.should == ("#{Time.now.strftime("%d.%m.%y %T")} || a message\n")
       end
 
     end
@@ -33,11 +33,11 @@ describe Basecamp::ImportLogger do
       end
 
       it 'logs info messages' do
-        capture(:stdout) { @logger.log('a message', :info) }.should == ("a message\n")
+        capture(:stdout) { @logger.log(:info, 'a message') }.should == ("#{Time.now.strftime("%d.%m.%y %T")} || a message\n")
       end
 
       it 'does not log debug messages' do
-        capture(:stdout) { @logger.log('a message', :debug) }.should be_blank
+        capture(:stdout) { @logger.log(:debug, 'a message') }.should be_blank
       end
 
     end

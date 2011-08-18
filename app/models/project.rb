@@ -12,10 +12,12 @@ class Project < ActiveRecord::Base
   #
   # Map the child items from basecamp to local child objects
   #
-  def sync
+  def sync(log_level = :info)
+    @logger = Basecamp::ImportLogger.new(log_level)
     basecamp_lists = fetch_items
 
     unless basecamp_lists.blank?
+      @logger.log :debug, "found #{basecamp_lists.size} Todo Lists for #{name}"
       todo_lists << basecamp_lists.map do |list|
         list_attributes = {
           :basecamp_id => list.id,
@@ -24,7 +26,7 @@ class Project < ActiveRecord::Base
         }
 
         list = ::TodoList.find_or_initialize_by_basecamp_id(list.id, list_attributes)
-        list.sync
+        list.sync(log_level)
 
         list
       end
