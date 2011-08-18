@@ -1,0 +1,7 @@
+development:
+  basecamp_token: 'your basecamp API token' 
+  basecamp_url: 'https://your-basecamp.url.com'
+
+test:
+  basecamp_token: 'your basecamp API token' 
+  basecamp_url: 'https://your-basecamp.url.com'
