@@ -24,7 +24,7 @@ Spork.prefork do
 
     # Record only new interactions.
     # (http://relishapp.com/myronmarston/vcr/docs/record-modes/new-episodes)
-    c.default_cassette_options = { :record => :new_episodes }
+    c.default_cassette_options = { :record => :none }
   end
 
   RSpec.configure do |config|

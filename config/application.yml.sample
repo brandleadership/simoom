@@ -1,7 +1,16 @@
+# development:
+#   basecamp_token: 'your basecamp API token' 
+#   basecamp_url: 'https://your-basecamp.url.com'
+# 
+# test:
+#   basecamp_token: 'your basecamp API token' 
+#   basecamp_url: 'https://your-basecamp.url.com'
+#
+
 development:
-  basecamp_token: 'your basecamp API token' 
-  basecamp_url: 'https://your-basecamp.url.com'
+  basecamp_token: '787943ebcb50d29176bc83a623830f487e439581' 
+  basecamp_url: 'https://scdummyaccount.basecamphq.com'
 
 test:
-  basecamp_token: 'your basecamp API token' 
-  basecamp_url: 'https://your-basecamp.url.com'
+  basecamp_token: '787943ebcb50d29176bc83a623830f487e439581' 
+  basecamp_url: 'https://scdummyaccount.basecamphq.com'
