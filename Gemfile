@@ -4,6 +4,7 @@ gem 'rails', '3.1.0.rc6'
 gem 'sqlite3'
 gem 'mysql2'
 gem 'haml-rails'
+gem 'simple_form'
 
 gem 'compass', :git => 'git://github.com/chriseppstein/compass.git', :branch => 'rails31'
 
