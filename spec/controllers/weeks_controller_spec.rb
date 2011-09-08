@@ -1,39 +1,42 @@
 require 'spec_helper'
 
 describe WeeksController do
-
+  before do
+    @week = Factory(:week)
+  end
+  
   describe "GET 'index'" do
-    it "should be successful" do
+    it "is successful" do
       get 'index'
       response.should be_success
     end
   end
 
   describe "GET 'edit'" do
-    it "should be successful" do
-      get 'edit'
+    it "is successful" do
+      get 'edit', :id => @week.id
       response.should be_success
     end
   end
 
   describe "GET 'show'" do
-    it "should be successful" do
-      get 'show'
+    it "is successful" do
+      get 'show', :id => @week.id
       response.should be_success
     end
   end
 
   describe "GET 'new'" do
-    it "should be successful" do
+    it "is successful" do
       get 'new'
       response.should be_success
     end
   end
   
   describe "GET 'current'" do
-    it 'should redirect to the latest week' do
+    it 'redirects to the latest week' do
       get 'current'
-      response.should be_redirect(week_path(Week.last))
+      response.should be_redirect
     end
   end
 

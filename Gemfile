@@ -21,6 +21,7 @@ gem 'jquery-rails'
 group :development, :test do
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
   gem 'ruby-debug'
   gem 'guard'
   gem 'guard-rspec'

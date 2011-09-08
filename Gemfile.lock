@@ -75,6 +75,10 @@ GEM
     erubis (2.7.0)
     execjs (1.2.4)
       multi_json (~> 1.0)
+    factory_girl (2.0.4)
+    factory_girl_rails (1.1.0)
+      factory_girl (~> 2.0.0)
+      railties (>= 3.0.0)
     fakeweb (1.3.0)
     ffi (1.0.9)
     fssm (0.2.7)
@@ -207,6 +211,7 @@ DEPENDENCIES
   coffee-rails (~> 3.1.0.rc)
   compass!
   database_cleaner
+  factory_girl_rails
   fakeweb
   growl
   guard
