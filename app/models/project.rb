@@ -1,6 +1,7 @@
 class Project < ActiveRecord::Base
 
   has_many :todo_lists
+  scope :by_name, order('name ASC')
 
   #
   # Fetch the child items from basecamp

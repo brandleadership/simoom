@@ -1,5 +1,12 @@
-%h1 
-  Woche
-  = @week.nr
-  bearbeiten
-= render 'form'
+.col.wide
+  %h1 
+    Woche
+    = @week.nr
+    bearbeiten
+  = render 'form'
+  %hr
+.col.side
+  = simple_form_for :todo_lists, :url => todo_lists_path, :remote => true, :method => :get do |f|
+    = f.input :project_id, :collection => Project.by_name
+    = f.submit
+  .todo-items

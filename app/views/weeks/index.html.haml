@@ -1,2 +1,5 @@
-%h1 Weeks#index
-%p Find me in app/views/weeks/index.html.haml
+%h1 Wochenübersicht
+%ul.list
+  - @weeks.each do |week|
+    %li
+      = link_to "Woche #{week.nr} bearbeiten", edit_week_path(week)

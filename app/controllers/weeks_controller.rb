@@ -3,6 +3,7 @@ class WeeksController < ApplicationController
   respond_to :html
   
   def index
+    @weeks = Week.order('nr DESC')
   end
 
   def edit

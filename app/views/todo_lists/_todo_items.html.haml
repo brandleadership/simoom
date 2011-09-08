@@ -1,0 +1,7 @@
+- @todo_lists.each do |t|
+  .todo-item
+    = t.name
+    = simple_form_for :week_todo_list, :url => week_todo_lists_path, :remote => true do |f|
+      = f.input :week_id, :as => :hidden, :html_input => {:value => params[:week_id] }
+      = f.input :todo_list_id, :as => :hidden, :html_input => {:value => params[:todo_list_id] }
+      = f.submit
