@@ -5,8 +5,8 @@ describe Week do
     @week = Week.new
   end
   
-  it 'has todo items' do
-    @week.should respond_to(:todo_items)
+  it 'has todo_lists' do
+    @week.should respond_to(:todo_lists)
   end
   
   it 'has a week number' do

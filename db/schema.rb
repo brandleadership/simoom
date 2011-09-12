@@ -38,9 +38,9 @@ ActiveRecord::Schema.define(:version => 20110906132050) do
     t.datetime "updated_at"
   end
 
-  create_table "week_todo_items", :id => false, :force => true do |t|
+  create_table "week_todo_lists", :force => true do |t|
     t.integer  "week_id"
-    t.integer  "todo_item_id"
+    t.integer  "todo_list_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

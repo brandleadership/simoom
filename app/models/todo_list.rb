@@ -2,7 +2,10 @@ class TodoList < ActiveRecord::Base
 
   belongs_to :project
   has_many :todo_items
-
+  
+  has_many :week_todo_lists
+  has_many :weeks, :through => :week_todo_lists
+  
   #
   # Fetch the child items from basecamp
   #

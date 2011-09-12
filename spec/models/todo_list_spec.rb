@@ -38,4 +38,8 @@ describe TodoList do
     end
 
   end
+  
+  it 'has weeks' do
+    TodoList.new.should respond_to(:weeks)
+  end
 end

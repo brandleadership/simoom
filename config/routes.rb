@@ -4,6 +4,7 @@ Simoom::Application.routes.draw do
   resources :weeks
   
   resources :todo_lists, :only => [:index, :show]
+  resources :weeks_todo_lists
   
   root :to => 'weeks#index'
   

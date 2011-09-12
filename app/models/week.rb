@@ -1,6 +1,6 @@
 class Week < ActiveRecord::Base
-  has_many :week_todo_items
-  has_many :todo_items, :through => :week_todo_items
+  has_many :week_todo_lists
+  has_many :todo_lists, :through => :week_todo_lists
   
   after_initialize do
     self.nr = Date.today.cweek if self.nr.blank?

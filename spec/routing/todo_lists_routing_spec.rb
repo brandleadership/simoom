@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Routing for todo lists' do
+describe 'Routing for todo_lists' do
   
   it 'routes GET /todo_lists to todo_lists#index' do
     { :get => '/todo_lists' }.should route_to(
@@ -24,5 +24,5 @@ describe 'Routing for todo lists' do
       :action => 'index',
       :project_id => '1'
     )
-  end  
+  end
 end
