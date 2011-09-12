@@ -9,7 +9,7 @@ describe 'Routing for weeks_todo_lists' do
     )
   end
   
-  it 'routes DELETE /weeks/1 to weeks_todo_lists#destroy' do
+  it 'routes DELETE /weeks_todo_lists/1 to weeks_todo_lists#destroy' do
     { :delete => '/weeks_todo_lists/1' }.should route_to(
       :controller => 'weeks_todo_lists',
       :action => 'destroy',
