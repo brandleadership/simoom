@@ -4,10 +4,11 @@
     = @week.nr
     bearbeiten
   = render 'form'
-  .todo-lists
-    = render :partial => :todo_list, :collection => @week.todo_lists
   %hr
+  #todo-lists
+    = render :partial => :todo_list, :collection => @week.todo_lists
 .col.side
   = simple_form_for :todo_lists, :url => todo_lists_path(:week_id => @week.id), :remote => true, :method => :get do |f|
-    = f.input :project_id, :collection => Project.by_name
+    = f.input :project_id, :collection => @available_projects
     = f.submit
+  .todo-lists

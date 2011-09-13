@@ -1,2 +1,3 @@
-%h1 Weeks#show
-%p Find me in app/views/weeks/show.html.haml
+%h1= week_name
+#todo-lists
+  = render :partial => :todo_list, :collection => @week.todo_lists

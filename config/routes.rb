@@ -6,7 +6,7 @@ Simoom::Application.routes.draw do
   resources :todo_lists, :only => [:index, :show]
   resources :weeks_todo_lists
   
-  root :to => 'weeks#index'
+  root :to => 'weeks#current'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

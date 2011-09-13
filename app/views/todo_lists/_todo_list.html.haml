@@ -1,10 +1,9 @@
-.todo-list
+.todo-list{ :id => "todo-list-#{todo_list.id}"}
   = todo_list.name
-  - if !todo_list.weeks.exists?(params[:week_id])
+  - if todo_list.assigned_to_week?(@week)
+    = link_to 'Remove from week', weeks_todo_lists_path(:week_id => @week.id, :todo_list_id => todo_list.id), :method => :delete, :remote => true
+  - else
     = simple_form_for :week_todo_list, :url => weeks_todo_lists_path, :remote => true do |f|
       = f.input :week_id, :as => :hidden, :input_html => { :value => params[:week_id].presence }
       = f.input :todo_list_id, :as => :hidden, :input_html => { :value => todo_list.id }
       = f.submit
-  - else
-    destroy
-    

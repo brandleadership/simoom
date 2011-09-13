@@ -32,4 +32,8 @@ class TodoList < ActiveRecord::Base
       end
     end
   end
+  
+  def assigned_to_week?(week)
+    weeks.include? week
+  end
 end
