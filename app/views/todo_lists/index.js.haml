@@ -1,1 +1,1 @@
-$(".todo-lists").html("#{ escape_javascript(render :partial => 'todo_list', :collection => @todo_lists) }")
+$(".todo-lists").html("#{ escape_javascript(render_todo_lists(@todo_lists, :add)) }")

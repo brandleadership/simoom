@@ -1,9 +1,17 @@
-.todo-list{ :id => "todo-list-#{todo_list.id}"}
-  = todo_list.name
-  - if todo_list.assigned_to_week?(@week)
-    = link_to 'Remove from week', weeks_todo_lists_path(:week_id => @week.id, :todo_list_id => todo_list.id), :method => :delete, :remote => true
+%tr.todo-list{ :id => "todo-list-#{todo_list.id}"}
+  %td.big
+    = todo_list.estimate
+  %td
+    .big= todo_list.name
+    .dimmed= todo_list.project.name
+  - if action == :complete
+    %td
+      = link_to 'Abschliessen', todo_list_path(todo_list), :class => :button
+
+  - elsif action == :edit
+    %td
+      = link_to 'Aus Woche entfernen', weeks_todo_lists_path(:week_id => @week.id, :todo_list_id => todo_list.id), :method => :delete, :remote => true, :class => :button
+
   - else
-    = simple_form_for :week_todo_list, :url => weeks_todo_lists_path, :remote => true do |f|
-      = f.input :week_id, :as => :hidden, :input_html => { :value => params[:week_id].presence }
-      = f.input :todo_list_id, :as => :hidden, :input_html => { :value => todo_list.id }
-      = f.submit
+    %td
+      = link_to 'Hinzufügen', weeks_todo_lists_path(:week_id => params[:week_id].presence, :todo_list_id => todo_list.id ), :remote => true, :class => :button

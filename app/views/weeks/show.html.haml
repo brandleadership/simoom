@@ -1,3 +1,4 @@
 %h1= week_name
-#todo-lists
-  = render :partial => :todo_list, :collection => @week.todo_lists
+= link_to 'Diese Woche bearbeiten', edit_week_path(@week)
+%table#todo-lists
+  = render_todo_lists(@week.todo_lists, :complete)

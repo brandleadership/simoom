@@ -1,6 +1,11 @@
+@import compass/reset
+
 body
   font-family: sans-serif
-
+  //background: image_url('lh.gif')
+  font-size: 16px
+  line-height: 150%
+  
 label
   display: block
 
@@ -11,6 +16,25 @@ a:link, a:active, a:visited
 a:hover
   color: #2C71AA
 
+h1, h2, h3
+  line-height: 150%
+
+h1
+  font-size: 32px
+
+h2
+  font-size: 24px
+  
+h3
+  font-size: 16px
+
+p, ul
+  margin-bottom: 24px
+
+table
+  width: 100%
+  margin-bottom: 24px
+
 .row
   overflow: hidden
   clear: both
@@ -19,28 +43,51 @@ a:hover
   float: left
   
 .wide
-  width: 70%
+  width: 608
+  padding: 24px
+  background: rgba(200, 200, 200, 0.1)
 
 .side
-  width: 30%
+  width: 306px
+  padding: 24px
+  background: rgba(150, 200, 250, 0.1)
+  border: 1px solid rgba(150, 200, 250, 0.3)
 
 .app
-  width: 960px
-  margin: 40px auto
-  background: #f0f0f0
+  width: 1102px
+  margin: 24px auto
   
-.list
-  li
-    border-bottom: 1px solid #ddd
-    padding: 10px 0px
-    
-.h-list
-  li
-    float: left
-    list-style: none
-    margin: 0px 5px
-    
-.header
-  background-color: #e6e6e6
-  border-bottom: 1px solid #e0e0e0
-  padding: 30px
+.big
+  font-weight: bold
+
+.block
+  margin-bottom: 48px
+
+.dimmed
+  color: #AAA
+  font-size: 12px
+
+.button
+  border: 1px solid #0a70b1
+  background: #0094f2
+  box-shadow: inset 0px 0px 0px 1px #2ca3ef
+  border-radius: 4px
+  line-height: 24px
+  padding: 4px 8px
+  font-size: 12px
+  white-space: nowrap
+
+.button:hover
+  background: #22a7f7
+  box-shadow: inset 0px 0px 0px 1px lighten(#2ca3ef, 10%)
+
+.button:active
+  background: #0094f2
+  box-shadow: inset 0px 0px 0px 1px #2ca3ef, inset 0px 0px 5px 0px darken(#2ca3ef, 20%)
+
+a.button
+  color: #fff
+  text-shadow: 0px 1px 0px #000
+  
+  &:active
+    text-shadow: 0px -1px 0px darken(#0094f2, 20%)

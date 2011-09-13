@@ -1,14 +1,15 @@
 .col.wide
-  %h1 
-    Woche
-    = @week.nr
-    bearbeiten
-  = render 'form'
-  %hr
-  #todo-lists
-    = render :partial => :todo_list, :collection => @week.todo_lists
+  .block
+    %h1 
+      Woche
+      = @week.nr
+      bearbeiten
+    = render 'form'
+  %table#todo-lists
+    = render_todo_lists(@week.todo_lists, :edit)
 .col.side
-  = simple_form_for :todo_lists, :url => todo_lists_path(:week_id => @week.id), :remote => true, :method => :get do |f|
-    = f.input :project_id, :collection => @available_projects
-    = f.submit
-  .todo-lists
+  .block
+    = simple_form_for :todo_lists, :url => todo_lists_path(:week_id => @week.id), :remote => true, :method => :get do |f|
+      = f.input :project_id, :collection => @available_projects
+      = f.submit
+  %table.todo-lists
