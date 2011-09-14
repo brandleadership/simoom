@@ -1,3 +1,2 @@
 $("#todo-list-#{@week_todo_list.todo_list.id}").remove()
-$("#todo-lists").append("#{ escape_javascript(render_todo_lists [@week_todo_list.todo_list], :edit) }")
 $("#planned-hours").html("#{ escape_javascript(render 'weeks/planned_hours') }")

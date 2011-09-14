@@ -1,13 +1,15 @@
-.col.wide
+.col.wide.grey
   .block
     %h1 
       Woche
       = @week.nr
       bearbeiten
     = render 'form'
+  #planned-hours.block
+    = render 'planned_hours'
   %table#todo-lists
     = render_todo_lists(@week.todo_lists, :edit)
-.col.side
+.col.side.blue
   .block
     = simple_form_for :todo_lists, :url => todo_lists_path(:week_id => @week.id), :remote => true, :method => :get do |f|
       = f.input :project_id, :collection => @available_projects

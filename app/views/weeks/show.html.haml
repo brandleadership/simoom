@@ -1,4 +1,5 @@
-%h1= week_name
-= link_to 'Diese Woche bearbeiten', edit_week_path(@week)
-%table#todo-lists
-  = render_todo_lists(@week.todo_lists, :complete)
+.block.grey
+  %h1= week_name
+  = link_to 'Diese Woche bearbeiten', edit_week_path(@week)
+  %table#todo-lists
+    = render_todo_lists(@week.todo_lists, :complete)

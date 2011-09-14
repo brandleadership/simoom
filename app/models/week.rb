@@ -11,6 +11,10 @@ class Week < ActiveRecord::Base
   end
   
   def planned_hours
-    0
+    todo_lists.inject(0) { |total, todo_list| total += todo_list.estimate.to_i }
+  end
+  
+  def hours_left
+    available_hours - planned_hours
   end
 end

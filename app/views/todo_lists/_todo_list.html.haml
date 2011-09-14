@@ -1,6 +1,6 @@
 %tr.todo-list{ :id => "todo-list-#{todo_list.id}"}
-  %td.big
-    = todo_list.estimate
+  %td.big-num
+    = "#{todo_list.estimate}h"
   %td
     .big= todo_list.name
     .dimmed= todo_list.project.name
@@ -10,7 +10,7 @@
 
   - elsif action == :edit
     %td
-      = link_to 'Aus Woche entfernen', weeks_todo_lists_path(:week_id => @week.id, :todo_list_id => todo_list.id), :method => :delete, :remote => true, :class => :button
+      = link_to 'Aus Woche entfernen', weeks_todo_list_path(WeekTodoList.find_by_week_id_and_todo_list_id(@week.id, todo_list.id)), :method => :delete, :remote => true, :class => :button
 
   - else
     %td
