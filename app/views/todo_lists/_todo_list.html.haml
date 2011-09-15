@@ -6,7 +6,7 @@
     .dimmed= todo_list.project.name
   - if action == :complete
     %td
-      - if todo_list.state? == TodoList::STATE_DONE
+      - if todo_list.state.to_i == TodoList::STATE_DONE
         = link_to 'Eröffnen', todo_list_path(todo_list, 'todo_list[state]' => TodoList::STATE_UNDONE, :week_id => @week.id), :remote => true, :method => :put, :class => :button
       - else
         = link_to 'Abschliessen', todo_list_path(todo_list, 'todo_list[state]' => TodoList::STATE_DONE, :week_id => @week.id), :remote => true, :method => :put, :class => :button

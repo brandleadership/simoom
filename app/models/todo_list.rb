@@ -1,7 +1,7 @@
 class TodoList < ActiveRecord::Base
   
-  STATE_DONE = true
-  STATE_UNDONE = false
+  STATE_DONE = 1
+  STATE_UNDONE = 0
   
   belongs_to :project
   has_many :todo_items
