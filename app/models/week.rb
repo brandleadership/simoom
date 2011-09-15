@@ -11,7 +11,7 @@ class Week < ActiveRecord::Base
   end
   
   def completed_hours
-    todo_lists.where(:state => TodoList::DONE_STATE).inject(0) { |total, todo_list| total += todo_list.estimate.to_i }
+    todo_lists.where(:state => TodoList::STATE_DONE).inject(0) { |total, todo_list| total += todo_list.estimate.to_i }
   end
   
   def planned_hours

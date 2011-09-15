@@ -1,12 +1,15 @@
 class TodoList < ActiveRecord::Base
   
-  DONE_STATE = 1
+  STATE_DONE = true
+  STATE_UNDONE = false
   
   belongs_to :project
   has_many :todo_items
   
   has_many :week_todo_lists
   has_many :weeks, :through => :week_todo_lists
+  
+  default_scope order('state ASC')
   
   #
   # Fetch the child items from basecamp

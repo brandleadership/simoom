@@ -3,7 +3,7 @@ Simoom::Application.routes.draw do
   get 'weeks/current' => 'weeks#current', :as => :current_week
   resources :weeks
   
-  resources :todo_lists, :only => [:index, :show]
+  resources :todo_lists, :only => [:index, :show, :update]
   resources :weeks_todo_lists
   
   root :to => 'weeks#current'
