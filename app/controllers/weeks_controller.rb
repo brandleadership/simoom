@@ -1,6 +1,6 @@
 class WeeksController < ApplicationController
   
-  respond_to :html
+  respond_to :html, :js
   
   def index
     @weeks = Week.order('nr DESC')
@@ -17,7 +17,10 @@ class WeeksController < ApplicationController
   def update
     week = Week.find(params[:id])
     if week.update_attributes(params[:week])
-      redirect_to week_path(week)
+      respond_to do |format|
+        format.html { redirect_to week_path(week) }
+        format.js   { render :update }
+      end
     else
       render 'edit'
     end

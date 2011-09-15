@@ -1,4 +1,8 @@
 class Week < ActiveRecord::Base
+  
+  STATE_DONE = true
+  STATE_UNDONE = false
+  
   has_many :week_todo_lists
   has_many :todo_lists, :through => :week_todo_lists
   
