@@ -43,7 +43,7 @@ Spork.prefork do
     # If you're not using ActiveRecord, or you'd prefer not to run each of your
     # examples within a transaction, remove the following line or assign false
     # instead of true.
-    config.use_transactional_fixtures = true
+    config.use_transactional_fixtures = false
 
     # Database Cleaner setup
     DatabaseCleaner.strategy = :truncation
@@ -77,6 +77,5 @@ Spork.prefork do
 end
 
 Spork.each_run do
-  # This code will be run each time you run your specs.
-
+  require 'factory_girl_rails'
 end
