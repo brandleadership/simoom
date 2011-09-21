@@ -14,7 +14,6 @@ describe TodoList do
         TodoList.new(:basecamp_id => 15703209).fetch_items.size.should be 4
       end
     end
-
   end
 
   describe '#sync' do
@@ -37,5 +36,9 @@ describe TodoList do
       end
     end
 
+  end
+  
+  it 'has weeks' do
+    TodoList.new.should respond_to(:weeks)
   end
 end

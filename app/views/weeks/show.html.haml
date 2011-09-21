@@ -1,0 +1,13 @@
+.block.grey
+  .block
+    %h1= week_name
+    = link_to 'Diese Woche bearbeiten', edit_week_path(@week)
+    - unless @week.done?
+      #week-done
+        = simple_form_for @week, :remote => true do |f|
+          = f.input :done, :as => :hidden, :input_html => { :value => Week::STATE_DONE }
+          = f.submit 'Woche abschliessen'
+  .block
+    = render 'weeks/completed_hours'
+  %table#todo-lists
+    = render_todo_lists(@week.todo_lists, :complete)

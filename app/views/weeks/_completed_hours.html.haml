@@ -1,0 +1,4 @@
+- if @week.completed_hours >= @week.available_hours
+  %h2= "Geschafft! #{@week.completed_hours}h von #{@week.available_hours}h sind erledigt!"
+- else
+  %h2= "Es sind #{@week.completed_hours}h von #{@week.available_hours}h erledigt. Auf geht's!"

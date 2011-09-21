@@ -3,6 +3,8 @@ source 'http://rubygems.org'
 gem 'rails'
 gem 'sqlite3'
 gem 'mysql2'
+gem 'haml-rails'
+gem 'simple_form'
 
 gem 'compass', '0.12.alpha.0'
 
@@ -19,6 +21,7 @@ gem 'jquery-rails'
 group :development, :test do
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
   gem 'ruby-debug'
   gem 'guard'
   gem 'guard-rspec'

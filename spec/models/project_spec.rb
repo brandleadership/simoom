@@ -43,7 +43,11 @@ describe Project do
         @project.todo_lists.each { |e| e.todo_items.should_not be_blank }
       end
     end
-
   end
-
+  
+  describe '.by_name' do
+    it 'returns all projects ordered by name' do
+      Project.should respond_to(:by_name)
+    end
+  end
 end

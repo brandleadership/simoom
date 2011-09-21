@@ -1,0 +1,3 @@
+%h2= "Es sind #{@week.planned_hours}h von #{@week.available_hours}h eingeplant"
+- if @week.planned_hours > @week.available_hours
+  .error-notice Es sind mehr Stunden eingeplant als verfügbar sind!

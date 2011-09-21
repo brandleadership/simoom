@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110817124234) do
+ActiveRecord::Schema.define(:version => 20110906132050) do
 
   create_table "projects", :force => true do |t|
     t.integer  "basecamp_id"
@@ -34,6 +34,21 @@ ActiveRecord::Schema.define(:version => 20110817124234) do
     t.integer  "estimate"
     t.string   "name"
     t.string   "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "week_todo_lists", :force => true do |t|
+    t.integer  "week_id"
+    t.integer  "todo_list_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "weeks", :force => true do |t|
+    t.integer  "nr"
+    t.integer  "available_hours"
+    t.boolean  "done"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

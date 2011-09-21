@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %title Simoom
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    .app
+      .row.header
+        %ul.h-list
+          %li Simoom
+          %li
+            %ul.h-list
+              %li= link_to 'Aktuelle Woche', current_week_path
+              %li= link_to 'Alle Wochen', weeks_path
+              %li= link_to 'Neue Woche anlegen', new_week_path, :class => :button
+          %li Letzte Synchronisation vor X Minuten
+          %li= link_to 'Logout', '#'
+      .row
+        = yield
