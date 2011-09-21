@@ -30,7 +30,7 @@ describe "CurrentWeeks" do
 
     context 'and no work has been completed' do
       it 'shows that 0 hours have been completed' do
-        page.should have_content('Es sind 0h von 30h erledigt. Auf geht\'s!')
+        page.should have_content('Es sind 0h von 10h erledigt. Auf geht\'s!')
       end
     end
 
@@ -40,7 +40,7 @@ describe "CurrentWeeks" do
         todo.state = TodoList::STATE_DONE
         todo.save
         visit(current_path)
-        page.should have_content('Es sind 10h von 30h erledigt. Auf geht\'s!')
+        page.should have_content('Es sind 10h von 10h erledigt. Auf geht\'s!')
       end
     end
   end
