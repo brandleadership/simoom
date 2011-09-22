@@ -42,4 +42,11 @@ class TodoList < ActiveRecord::Base
     weeks.include? week
   end
 
+  #
+  # Marks the corresponding TodoList in Basecamp as complete
+  #
+  def complete_in_basecamp
+
+  end
+
 end

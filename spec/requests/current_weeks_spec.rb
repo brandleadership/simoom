@@ -43,5 +43,6 @@ describe "CurrentWeeks" do
         page.should have_content('Es sind 10h von 10h erledigt. Auf geht\'s!')
       end
     end
+
   end
 end
