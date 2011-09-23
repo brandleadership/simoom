@@ -7,6 +7,7 @@ gem 'haml-rails'
 gem 'simple_form'
 
 gem 'compass', '0.12.alpha.0'
+gem 'therubyracer'
 
 # Gems used only for assets and not required
 # in production environments by default.
