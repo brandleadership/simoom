@@ -5,7 +5,6 @@ gem 'sqlite3'
 gem 'mysql2'
 gem 'haml-rails'
 gem 'simple_form'
-gem 'rake','0.8.7'
 
 gem 'compass', '0.12.alpha.0'
 
