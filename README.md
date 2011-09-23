@@ -1,5 +1,7 @@
 # Simoom -- the internal planning tool of Screen Concept
 
+(Kind of like a Basecamp wrapper)
+
 ## Setup Instructions
 
 - copy `config/database.yml.sample` to `config/database.yml` and edit
