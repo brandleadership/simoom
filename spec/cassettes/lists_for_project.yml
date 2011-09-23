@@ -16,29 +16,29 @@
     headers: 
       x-throttle-max: 
       - "500"
-      strict-transport-security: 
-      - max-age=31536000
       etag: 
       - "\"813ff7b0d7d8eafc2914cc8ebe210c3e\""
+      strict-transport-security: 
+      - max-age=31536000
       content-type: 
       - application/xml; charset=utf-8
       x-throttle-horizon: 
       - "2011-08-18T06:54:10Z"
-      x-runtime: 
-      - "20"
-      x-throttle-count: 
-      - "1"
-      date: 
-      - Thu, 18 Aug 2011 06:54:03 GMT
       server: 
       - nginx/0.8.33
+      date: 
+      - Thu, 18 Aug 2011 06:54:03 GMT
+      x-throttle-count: 
+      - "1"
+      x-runtime: 
+      - "20"
       set-cookie: 
       - transition_token=BAhbB2kDtcCNSXU6CVRpbWUNR94bwARnN9gGOh9AbWFyc2hhbF93aXRoX3V0Y19jb2VyY2lvblQ%3D--64a55772edf3c8765f604a92fa3ee3cc73594731; path=/; secure
       - _basecamp_session=BAh7BzoPc2Vzc2lvbl9pZCIlM2MxNGZmNmQ3ODE5YTVkZDViZGM1ZGY2NDM1MTVkN2Y6EGlkZW50aXR5X2lkaQP0tRM%3D--cace861c19e4907b5d5f726413ae8de331488324; path=/; HttpOnly; secure
-      cache-control: 
-      - private, max-age=0, must-revalidate
       status: 
       - 200 OK
+      cache-control: 
+      - private, max-age=0, must-revalidate
       transfer-encoding: 
       - chunked
     body: |
@@ -63,29 +63,29 @@
     headers: 
       x-throttle-max: 
       - "500"
-      etag: 
-      - "\"813ff7b0d7d8eafc2914cc8ebe210c3e\""
       strict-transport-security: 
       - max-age=31536000
+      etag: 
+      - "\"813ff7b0d7d8eafc2914cc8ebe210c3e\""
       content-type: 
       - application/xml; charset=utf-8
       x-throttle-horizon: 
       - "2011-08-18T06:54:20Z"
-      server: 
-      - nginx/0.8.33
-      date: 
-      - Thu, 18 Aug 2011 06:54:14 GMT
-      x-throttle-count: 
-      - "1"
       x-runtime: 
       - "23"
+      x-throttle-count: 
+      - "1"
+      date: 
+      - Thu, 18 Aug 2011 06:54:14 GMT
+      server: 
+      - nginx/0.8.33
       set-cookie: 
       - transition_token=BAhbB2kDtcCNSXU6CVRpbWUNR94bwNaF6dgGOh9AbWFyc2hhbF93aXRoX3V0Y19jb2VyY2lvblQ%3D--7bebaaf20b8d6c0f414c8b5e6a9e8ac0e7bd7f8c; path=/; secure
       - _basecamp_session=BAh7BzoPc2Vzc2lvbl9pZCIlYzY4N2IzNjg3NjJiMTRiYjMzNGJkNjUwNjg3NWE3YmQ6EGlkZW50aXR5X2lkaQP0tRM%3D--daca44f5ca7643be20de01b0c004fedee445016b; path=/; HttpOnly; secure
-      status: 
-      - 200 OK
       cache-control: 
       - private, max-age=0, must-revalidate
+      status: 
+      - 200 OK
       transfer-encoding: 
       - chunked
     body: |
@@ -110,29 +110,29 @@
     headers: 
       x-throttle-max: 
       - "500"
-      strict-transport-security: 
-      - max-age=31536000
       etag: 
       - "\"813ff7b0d7d8eafc2914cc8ebe210c3e\""
+      strict-transport-security: 
+      - max-age=31536000
       content-type: 
       - application/xml; charset=utf-8
       x-throttle-horizon: 
       - "2011-08-18T06:55:40Z"
-      x-runtime: 
-      - "22"
-      x-throttle-count: 
-      - "1"
-      date: 
-      - Thu, 18 Aug 2011 06:55:31 GMT
       server: 
       - nginx/0.8.33
+      date: 
+      - Thu, 18 Aug 2011 06:55:31 GMT
+      x-throttle-count: 
+      - "1"
+      x-runtime: 
+      - "22"
       set-cookie: 
       - transition_token=BAhbB2kDtcCNSXU6CVRpbWUNR94bwDG9890GOh9AbWFyc2hhbF93aXRoX3V0Y19jb2VyY2lvblQ%3D--a0b97f1bd63ab47fbda5b353d8ed9119eb318286; path=/; secure
       - _basecamp_session=BAh7BzoPc2Vzc2lvbl9pZCIlNmM2Y2VhYWEzOTBlNzA2OGM3MmE3MzAxMWI0NWFiZGQ6EGlkZW50aXR5X2lkaQP0tRM%3D--c46b2e4e7e1f5af486236ef09d2524a4ffc95e1b; path=/; HttpOnly; secure
-      cache-control: 
-      - private, max-age=0, must-revalidate
       status: 
       - 200 OK
+      cache-control: 
+      - private, max-age=0, must-revalidate
       transfer-encoding: 
       - chunked
     body: |
@@ -157,29 +157,29 @@
     headers: 
       x-throttle-max: 
       - "500"
-      etag: 
-      - "\"b42ba057e5b444493e7e160666b0252e\""
       strict-transport-security: 
       - max-age=31536000
+      etag: 
+      - "\"b42ba057e5b444493e7e160666b0252e\""
       content-type: 
       - application/xml; charset=utf-8
       x-throttle-horizon: 
       - "2011-08-18T06:56:30Z"
-      server: 
-      - nginx/0.8.33
-      date: 
-      - Thu, 18 Aug 2011 06:56:20 GMT
-      x-throttle-count: 
-      - "1"
       x-runtime: 
       - "16"
+      x-throttle-count: 
+      - "1"
+      date: 
+      - Thu, 18 Aug 2011 06:56:20 GMT
+      server: 
+      - nginx/0.8.33
       set-cookie: 
       - transition_token=BAhbB2kDtcCNSXU6CVRpbWUNR94bwN2iR%2BEGOh9AbWFyc2hhbF93aXRoX3V0Y19jb2VyY2lvblQ%3D--9610d0450bc1a37a18607af2c301695cddf103a8; path=/; secure
       - _basecamp_session=BAh7BzoPc2Vzc2lvbl9pZCIlM2MxYTc1YzFkZWEwYjhkNWUyNmExOWQ5N2VmNDhiYjE6EGlkZW50aXR5X2lkaQP0tRM%3D--71a74c31fd12bf07228c8a9ab098e6b68195f8dd; path=/; HttpOnly; secure
-      status: 
-      - 200 OK
       cache-control: 
       - private, max-age=0, must-revalidate
+      status: 
+      - 200 OK
       transfer-encoding: 
       - chunked
     body: |
@@ -218,29 +218,29 @@
     headers: 
       x-throttle-max: 
       - "500"
-      strict-transport-security: 
-      - max-age=31536000
       etag: 
       - "\"aa9e267ba379d09a98fb9263ae2d04da\""
+      strict-transport-security: 
+      - max-age=31536000
       content-type: 
       - application/xml; charset=utf-8
       x-throttle-horizon: 
       - "2011-08-18T07:47:50Z"
-      x-runtime: 
-      - "31"
-      x-throttle-count: 
-      - "1"
-      date: 
-      - Thu, 18 Aug 2011 07:47:48 GMT
       server: 
       - nginx/0.8.33
+      date: 
+      - Thu, 18 Aug 2011 07:47:48 GMT
+      x-throttle-count: 
+      - "1"
+      x-runtime: 
+      - "31"
       set-cookie: 
       - transition_token=BAhbB2kDtcCNSXU6CVRpbWUNSN4bwKHnAL8GOh9AbWFyc2hhbF93aXRoX3V0Y19jb2VyY2lvblQ%3D--32400c17a42ef0dbfe3e343422754872917e1e0a; path=/; secure
       - _basecamp_session=BAh7BzoPc2Vzc2lvbl9pZCIlMTdlMDA0YTIwYTJjYjUxNmQ5MDJlODI1ZDNiYmFhMWY6EGlkZW50aXR5X2lkaQP0tRM%3D--671c3a1a051d1f901124b075c916930566f55333; path=/; HttpOnly; secure
-      cache-control: 
-      - private, max-age=0, must-revalidate
       status: 
       - 200 OK
+      cache-control: 
+      - private, max-age=0, must-revalidate
       transfer-encoding: 
       - chunked
     body: |
@@ -308,4 +308,46 @@
         </todo-item>
       </todo-items>
 
+    http_version: "1.1"
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: https://0094cab70b88fc7a4ffffdf13547ce3b18f4abf8:password@screenconcept.basecamphq.com:443/todo_lists.xml?project_id=7809235
+    body: 
+    headers: 
+      accept: 
+      - application/xml
+      authorization: 
+      - Basic MDA5NGNhYjcwYjg4ZmM3YTRmZmZmZGYxMzU0N2NlM2IxOGY0YWJmODpwYXNzd29yZA==
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 404
+      message: Not Found
+    headers: 
+      x-throttle-max: 
+      - "500"
+      strict-transport-security: 
+      - max-age=31536000
+      content-type: 
+      - application/xml; charset=utf-8
+      x-throttle-horizon: 
+      - "2011-09-22T07:59:30Z"
+      x-runtime: 
+      - "14"
+      x-throttle-count: 
+      - "5"
+      date: 
+      - Thu, 22 Sep 2011 07:59:27 GMT
+      server: 
+      - nginx/1.0.5
+      set-cookie: 
+      - transition_token=BAhbB2kDYPBjSXU6CVRpbWUNyOIbwCdis%2B0GOh9AbWFyc2hhbF93aXRoX3V0Y19jb2VyY2lvblQ%3D--1b77e490ad128547e6cef248b816611011197475; path=/; secure
+      - _basecamp_session=BAh7BzoPc2Vzc2lvbl9pZCIlODQxZDM4YTFhZmE3MDRlY2YyNGEwNjdjZmRiM2E4ZGE6EGlkZW50aXR5X2lkaQOp6xw%3D--0e0fb0db650463c5bd9d8891058809926376deb2; path=/; HttpOnly; secure
+      cache-control: 
+      - no-cache
+      status: 
+      - 404 Not Found
+      transfer-encoding: 
+      - chunked
+    body: " "
     http_version: "1.1"
