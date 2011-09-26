@@ -11,3 +11,5 @@
     = render 'weeks/completed_hours'
   %table#todo-lists
     = render_todo_lists(@week.todo_lists, :complete)
+  .block
+    =link_to 'Generate PDF', week_path(@week, :format => :pdf)

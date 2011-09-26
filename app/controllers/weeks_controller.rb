@@ -1,6 +1,6 @@
 class WeeksController < ApplicationController
   
-  respond_to :html, :js
+  respond_to :html, :js, :pdf
   
   def index
     @weeks = Week.order('nr DESC')
@@ -28,7 +28,12 @@ class WeeksController < ApplicationController
 
   def show
     @week = Week.find(params[:id])
-    respond_with @week
+    respond_with @week do |format|
+      format.pdf do
+        @document = PdfTemplate::StoryCard.new(@week)
+        send_data @document.to_pdf.render, :filename => "Storycards_Week_#{@week.nr}.pdf", :type => 'application/pdf'
+      end
+    end
   end
 
   def new
