@@ -46,7 +46,10 @@ class TodoList < ActiveRecord::Base
   # Marks the corresponding TodoList in Basecamp as complete
   #
   def complete_in_basecamp
-
+    fetch_items.each do |t|
+      t.completed = true
+      t.save
+    end
   end
 
 end

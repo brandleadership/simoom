@@ -13,9 +13,9 @@ class TodoListsController < ApplicationController
   def update
     todo_list = TodoList.find(params[:id])
 
-    # if params[:todo_list][:state] == TodoList::STATE_DONE
-    #   todo_list.complete
-    # end
+    if params[:todo_list][:state] == TodoList::STATE_DONE.to_s
+      todo_list.complete_in_basecamp
+    end
 
     if todo_list.update_attributes(params[:todo_list])
       @week = Week.find(params[:week_id])
