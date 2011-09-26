@@ -42,9 +42,9 @@ class WeeksController < ApplicationController
   end
   
   def create
-    week = Week.new params[:week]
-    if week.save
-      redirect_to week_path(week)
+    @week = Week.new params[:week]
+    if @week.save
+      redirect_to week_path(@week)
     else
       render 'new'
     end

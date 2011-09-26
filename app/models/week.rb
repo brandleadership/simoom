@@ -6,6 +6,9 @@ class Week < ActiveRecord::Base
   has_many :week_todo_lists
   has_many :todo_lists, :through => :week_todo_lists
   
+  validates :available_hours, :presence => true
+  validates :nr, :uniqueness => true
+  
   after_initialize do
     self.nr = Date.today.cweek if self.nr.blank?
   end

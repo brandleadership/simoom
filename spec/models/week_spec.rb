@@ -5,6 +5,35 @@ describe Week do
     @week = Week.new
   end
   
+  context 'without any attributes' do
+    before :each do
+      @current_week = Factory.create(:week)
+      @week.nr = @current_week.nr
+    end
+    
+    it 'does not pass' do
+      @week.should_not be_valid
+    end
+    
+    it 'has 2 errors' do
+      @week.valid?
+      @week.errors.should have(2).items
+    end
+  end
+  
+  
+  context 'with valid attributes' do
+    before :each do
+      @week.nr = '39'
+      @week.available_hours = 60
+    end
+    
+    it 'pass the validations' do
+      @week.should be_valid
+    end
+  end
+  
+  
   it 'has todo_lists' do
     @week.should respond_to(:todo_lists)
   end
