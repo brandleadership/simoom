@@ -21,6 +21,7 @@ Spork.prefork do
   VCR.config do |c|
     c.cassette_library_dir     = 'spec/cassettes'
     c.stub_with :fakeweb
+    c.ignore_localhost = true
 
     # Record only new interactions.
     # (http://relishapp.com/myronmarston/vcr/docs/record-modes/new-episodes)
@@ -74,6 +75,8 @@ Spork.prefork do
 
     alias :silence :capture
   end
+
+  Capybara.javascript_driver = :webkit
 end
 
 Spork.each_run do
