@@ -35,6 +35,8 @@ group :development, :test do
   gem 'vcr'
   gem 'fakeweb'
   gem 'database_cleaner'
+  gem 'capybara-webkit'
+  gem 'launchy'
 
   # Deployment gems
   gem 'capistrano'
