@@ -16,29 +16,29 @@
     headers: 
       x-throttle-max: 
       - "500"
-      etag: 
-      - "\"aa9e267ba379d09a98fb9263ae2d04da\""
       strict-transport-security: 
       - max-age=31536000
+      etag: 
+      - "\"aa9e267ba379d09a98fb9263ae2d04da\""
       content-type: 
       - application/xml; charset=utf-8
       x-throttle-horizon: 
       - "2011-08-18T06:37:50Z"
-      server: 
-      - nginx/0.8.33
-      date: 
-      - Thu, 18 Aug 2011 06:37:41 GMT
-      x-throttle-count: 
-      - "2"
       x-runtime: 
       - "29"
+      x-throttle-count: 
+      - "2"
+      date: 
+      - Thu, 18 Aug 2011 06:37:41 GMT
+      server: 
+      - nginx/0.8.33
       set-cookie: 
       - transition_token=BAhbB2kDtcCNSXU6CVRpbWUNR94bwO1wm5YGOh9AbWFyc2hhbF93aXRoX3V0Y19jb2VyY2lvblQ%3D--36bef45cea5532d926d895ad4f51b99ee558eec6; path=/; secure
       - _basecamp_session=BAh7BzoPc2Vzc2lvbl9pZCIlODYwNmFkMWE1MzU2MzU3OGY5NWQ4MzQxZmE0NmYxMzY6EGlkZW50aXR5X2lkaQP0tRM%3D--fca1088e37f7a7dcbea8b325609133a435a0302b; path=/; HttpOnly; secure
-      status: 
-      - 200 OK
       cache-control: 
       - private, max-age=0, must-revalidate
+      status: 
+      - 200 OK
       transfer-encoding: 
       - chunked
     body: |
@@ -106,44 +106,4 @@
         </todo-item>
       </todo-items>
 
-    http_version: "1.1"
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
-    method: :get
-    uri: https://0094cab70b88fc7a4ffffdf13547ce3b18f4abf8:password@screenconcept.basecamphq.com:443/todo_items.xml?filter=all&todo_list_id=15703209
-    body: 
-    headers: 
-      accept: 
-      - application/xml
-      authorization: 
-      - Basic MDA5NGNhYjcwYjg4ZmM3YTRmZmZmZGYxMzU0N2NlM2IxOGY0YWJmODpwYXNzd29yZA==
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
-      code: 404
-      message: Not Found
-    headers: 
-      x-throttle-max: 
-      - "500"
-      strict-transport-security: 
-      - max-age=31536000
-      content-type: 
-      - "*/*; charset=utf-8"
-      x-throttle-horizon: 
-      - "2011-09-22T07:59:30Z"
-      x-throttle-count: 
-      - "6"
-      date: 
-      - Thu, 22 Sep 2011 07:59:28 GMT
-      server: 
-      - nginx/1.0.5
-      set-cookie: 
-      - transition_token=BAhbB2kDYPBjSXU6CVRpbWUNyOIbwDviy%2B0GOh9AbWFyc2hhbF93aXRoX3V0Y19jb2VyY2lvblQ%3D--b41e77d9167e49c99c287ac3ca2c2d6df2630b20; path=/; secure
-      - _basecamp_session=BAh7BzoPc2Vzc2lvbl9pZCIlODIzMDNjODBiNTMzOWIyNmQxN2I4YjYxNDNhMTkyNjI6EGlkZW50aXR5X2lkaQOp6xw%3D--8ec112477ce6532e4b82f9107790fd6c92cfe9c3; path=/; HttpOnly; secure
-      cache-control: 
-      - no-cache
-      status: 
-      - 404 Not Found
-      transfer-encoding: 
-      - chunked
-    body: " "
     http_version: "1.1"
