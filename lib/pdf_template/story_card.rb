@@ -5,7 +5,7 @@ module PdfTemplate
   class StoryCard
     attr_accessor :week, :document
     
-    CARD_WIDTH = 130
+    CARD_WIDTH = 133
     CARD_HEIGHT = 85
     LIMIT_TODO_ITEMS = 6
     
@@ -15,6 +15,8 @@ module PdfTemplate
       @document = Prawn::Document.new(
             :page_size => "A4",
             :page_layout => :landscape,
+            :left_margin => 20,
+            :right_margin => 20,
             :info => {
                 :Title => 'Story Cards',
                 :Author => "Screen Concept",
@@ -26,7 +28,7 @@ module PdfTemplate
     end
     
     def to_pdf
-      positioning = [ [0, 0], [400, 0], [0, 270], [400, 270] ]
+      positioning = [ [0, 0], [420, 0], [0, 280], [420, 280] ]
       
       @week.todo_lists.each_with_index do |todo_list, index|
         x_coordinate = @document.bounds.left+(positioning[index%4]).first
