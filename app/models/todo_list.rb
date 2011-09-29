@@ -46,10 +46,18 @@ class TodoList < ActiveRecord::Base
   # Marks the corresponding TodoList in Basecamp as complete
   #
   def complete_in_basecamp
-    fetch_items.each do |t|
-      t.completed = true
-      t.save
+    items = fetch_items
+
+    unless items.blank?
+      items.each do |t|
+        t.completed = true
+        t.save
+      end
     end
+
+    project_feed = Campfire.room(Configuration.campfire_room)
+    project_feed.join
+    project_feed.message "#{Time.now.strftime("%d.%m.%y -- %T")}: [USER-STORY] -- [#{self.project.name}] -- Story ##{self.basecamp_id} wurde abgeschlossen by <Mr. X>"
   end
 
 end
