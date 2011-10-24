@@ -56,4 +56,10 @@ class WeeksController < ApplicationController
     end
   end
   
+  def destroy
+    week = Week.find params[:id]
+    week.destroy
+    redirect_to weeks_path, :notice => 'Week was successfully deleted'
+  end
+  
 end

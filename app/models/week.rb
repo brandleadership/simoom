@@ -3,7 +3,7 @@ class Week < ActiveRecord::Base
   STATE_DONE = 1
   STATE_UNDONE = 0
   
-  has_many :week_todo_lists
+  has_many :week_todo_lists, :dependent => :destroy
   has_many :todo_lists, :through => :week_todo_lists
   
   validates :available_hours, :presence => true

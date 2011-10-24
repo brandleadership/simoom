@@ -7,7 +7,7 @@ describe Week do
   
   context 'without any attributes' do
     before :each do
-      @current_week = Factory.create(:week)
+      @current_week = Factory(:week)
       @week.nr = @current_week.nr
     end
     
@@ -30,6 +30,25 @@ describe Week do
     
     it 'pass the validations' do
       @week.should be_valid
+    end
+  end
+  
+  context 'when destroy a week' do
+    before :each do
+      @week = Factory(:week, :available_hours => 30, :nr => Date.today.cweek)
+      @todo_list = TodoList.new(:estimate => 10)
+      @todo_list.project = Project.create(:name => 'test')
+      @todo_list.save
+      @week.todo_lists << @todo_list
+      @week.save
+    end
+    
+    it 'removes the week and associated week todo list' do
+      lambda {
+        lambda {
+          @week.destroy
+        }.should change(Week, :count).by(-1)
+      }.should change(WeekTodoList, :count).by(-1)
     end
   end
   

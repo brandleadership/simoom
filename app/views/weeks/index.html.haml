@@ -3,4 +3,6 @@
   %ul.list
     - @weeks.each do |week|
       %li
-        = link_to "Woche #{week.nr} bearbeiten", edit_week_path(week)
+        %p= "Woche #{week.nr}"
+        = link_to 'bearbeiten', edit_week_path(week)
+        = link_to 'löschen', week_path(week), :method => :delete, :confirm => "Woche ##{week.nr} wirklich löschen?"
