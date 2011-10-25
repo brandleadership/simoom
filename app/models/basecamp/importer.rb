@@ -35,6 +35,7 @@ module Basecamp
         }
 
         local_project = ::Project.find_or_initialize_by_basecamp_id(project.id, project_attributes)
+        local_project.update_attributes(project_attributes) if local_project.persisted?
         local_project.sync(log_level)
         local_project.save
       end

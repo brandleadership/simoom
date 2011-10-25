@@ -34,7 +34,9 @@ class TodoList < ActiveRecord::Base
           :name => item.content
         }
 
-        ::TodoItem.find_or_initialize_by_basecamp_id(item.id, item_attributes)
+        list_item = ::TodoItem.find_or_initialize_by_basecamp_id(item.id, item_attributes)
+        list_item.update_attributes(item_attributes) if list_item.persisted?
+        list_item
       end
     end
   end
