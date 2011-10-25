@@ -139,6 +139,7 @@
       <todo-lists type="array">
         <todo-list>
           <completed-count type="integer">0</completed-count>
+          <completed type="boolean">false</completed>
           <description>4h Some Dummy Tasks</description>
           <id type="integer">15703209</id>
           <milestone-id type="integer" nil="true"></milestone-id>
@@ -308,6 +309,7 @@
       <todo-lists type="array">
         <todo-list>
           <completed-count type="integer">0</completed-count>
+          <completed type="boolean">false</completed>
           <description></description>
           <id type="integer">15703205</id>
           <milestone-id type="integer" nil="true"></milestone-id>
@@ -321,6 +323,7 @@
         </todo-list>
         <todo-list>
           <completed-count type="integer">0</completed-count>
+          <completed type="boolean">false</completed>
           <description>8h</description>
           <id type="integer">15703200</id>
           <milestone-id type="integer" nil="true"></milestone-id>
@@ -568,6 +571,7 @@
       <todo-lists type="array">
         <todo-list>
           <completed-count type="integer">0</completed-count>
+          <completed type="boolean">false</completed>
           <description>4h Some Dummy Tasks</description>
           <id type="integer">15703209</id>
           <milestone-id type="integer" nil="true"></milestone-id>
@@ -629,6 +633,7 @@
       <todo-lists type="array">
         <todo-list>
           <completed-count type="integer">0</completed-count>
+          <completed type="boolean">false</completed>
           <description></description>
           <id type="integer">15703205</id>
           <milestone-id type="integer" nil="true"></milestone-id>
@@ -642,6 +647,7 @@
         </todo-list>
         <todo-list>
           <completed-count type="integer">0</completed-count>
+          <completed type="boolean">false</completed>
           <description>8h</description>
           <id type="integer">15703200</id>
           <milestone-id type="integer" nil="true"></milestone-id>

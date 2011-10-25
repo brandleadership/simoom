@@ -34,6 +34,7 @@ describe Project do
       VCR.use_cassette('lists_for_project', :record => :new_episodes) do
         @project.sync
         @project.todo_lists.each { |e| e.should be_a TodoList }
+        @project.todo_lists.each { |e| e.state.should_not be_nil }
       end
     end
 
