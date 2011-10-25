@@ -26,7 +26,7 @@ class TodoListsController < ApplicationController
 private
 
   def todo_lists_without_week_for_project(week, project)
-    project.todo_lists.reject do |item|
+    project.todo_lists.uncomplete.reject do |item|
       week.todo_list_ids.include? item.id
     end
   end

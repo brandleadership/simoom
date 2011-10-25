@@ -10,6 +10,7 @@ class TodoList < ActiveRecord::Base
   has_many :weeks, :through => :week_todo_lists
 
   default_scope order('state ASC')
+  scope :uncomplete, where('state = ?', STATE_UNDONE)
 
   #
   # Fetch the child items from basecamp
