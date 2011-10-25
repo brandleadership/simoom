@@ -2,7 +2,7 @@ class Project < ActiveRecord::Base
 
   has_many :todo_lists
   scope :by_name, order('name ASC')
-
+  
   #
   # Fetch the child items from basecamp
   #
@@ -20,18 +20,14 @@ class Project < ActiveRecord::Base
     unless basecamp_lists.blank?
       @logger.log :debug, "found #{basecamp_lists.size} Todo Lists for #{name}"
       todo_lists << basecamp_lists.map do |list|
-        list_attributes = {
-          :basecamp_id => list.id,
-          :name => list.name,
-          :estimate => (list.description.present? ? list.description.match(Basecamp::Importer::ESTIMATE_MATCHER).to_s : nil)
-        }
-
+        list_attributes = list.extract_attributes
+        
         list = ::TodoList.find_or_initialize_by_basecamp_id(list.id, list_attributes)
+        list.update_attributes(list_attributes) if list.persisted?
         list.sync(log_level)
 
         list
       end
     end
   end
-
 end
