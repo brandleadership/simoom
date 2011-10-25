@@ -9,7 +9,7 @@ module Basecamp
     # Projects not matching this naming pattern will be discarded
     #
     P_NUMBER_MATCHER = / \- P\d+$/
-    ESTIMATE_MATCHER = /(\d|\d.\d+)h/
+    ESTIMATE_MATCHER = /(\d+)h/
 
     #
     # Sync Local DB with Basecamp
