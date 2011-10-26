@@ -8,7 +8,7 @@ class WeeksController < ApplicationController
 
   def edit
     @week = Week.includes(:todo_lists).find(params[:id])
-    @available_projects = Project.by_name.select do |project|
+    @available_projects = Project.active.by_name.select do |project|
       project.todo_lists.exists?
     end
     respond_with(@week)

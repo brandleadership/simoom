@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110906132050) do
+ActiveRecord::Schema.define(:version => 20111025143459) do
 
   create_table "projects", :force => true do |t|
     t.integer  "basecamp_id"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20110906132050) do
     t.string   "p_number"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "status"
   end
 
   create_table "todo_items", :force => true do |t|

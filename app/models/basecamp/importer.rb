@@ -31,7 +31,8 @@ module Basecamp
         project_attributes = {
           :basecamp_id => project.id,
           :name => project_name.strip,
-          :p_number => p_number.strip
+          :p_number => p_number.strip,
+          :status => project.status
         }
 
         local_project = ::Project.find_or_initialize_by_basecamp_id(project.id, project_attributes)

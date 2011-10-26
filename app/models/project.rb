@@ -1,7 +1,11 @@
 class Project < ActiveRecord::Base
 
+  STATUS_ACTIVE = 'active'
+  STATUS_ARCHIVED = 'archived'
+
   has_many :todo_lists
   scope :by_name, order('name ASC')
+  scope :active, where('status = ?', STATUS_ACTIVE)
   
   #
   # Fetch the child items from basecamp
