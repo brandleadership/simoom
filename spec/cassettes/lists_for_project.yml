@@ -191,7 +191,7 @@
           <description>4h Some Dummy Tasks</description>
           <id type="integer">15703209</id>
           <milestone-id type="integer" nil="true"></milestone-id>
-          <name>Dummy Todo List</name>
+          <name>[exclude] Dummy Todo List</name>
           <position type="integer">1</position>
           <private type="boolean">false</private>
           <project-id type="integer">7809235</project-id>

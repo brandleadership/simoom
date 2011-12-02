@@ -10,8 +10,13 @@ class Project < ActiveRecord::Base
   #
   # Fetch the child items from basecamp
   #
-  def fetch_items
-    Basecamp::TodoList.find(:all, :params => { :project_id => basecamp_id })
+  def fetch_items(options = {})
+    exclude = true
+    exclude = false if options.delete(:exclude) == false
+
+    list = Basecamp::TodoList.find(:all, :params => { :project_id => basecamp_id })
+    list = list.reject { |t| t.name.include?('[exclude]') } if list.present? && exclude == true
+    list
   end
 
   #

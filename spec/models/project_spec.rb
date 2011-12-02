@@ -9,12 +9,17 @@ describe Project do
       Project.new(:basecamp_id => 1).fetch_items
     end
 
-    it 'returns the items as an array' do
+    it 'returns all non excluded items as an array' do
       VCR.use_cassette('lists_for_project', :record => :new_episodes) do
-        Project.new(:basecamp_id => 7809235).fetch_items.size.should be 1
+        Project.new(:basecamp_id => 7809235).fetch_items.size.should be 0
       end
     end
-
+    
+    it 'returns all items regardless if flagged as excluded' do
+      VCR.use_cassette('lists_for_project', :record => :new_episodes) do
+        Project.new(:basecamp_id => 7809235).fetch_items(:exclude => false).size.should be 1
+      end
+    end
   end
 
   describe '#sync' do
