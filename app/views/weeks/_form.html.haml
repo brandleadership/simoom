@@ -1,4 +1,9 @@
-= simple_form_for @week do |f|
-  = f.input :nr
-  = f.input :available_hours
-  = f.submit
+.well
+  = simple_form_for @week, :html => { :class => 'form-stacked' } do |f|
+    %fieldset
+      %legend Stunden eingeben
+      #planned-hours
+        = render 'planned_hours'
+      = f.input :nr, :label => 'Wochen-Nummer'
+      = f.input :available_hours, :label => 'Verfügbare Stunden'
+      = f.submit 'Woche speichern', :class => 'btn primary'

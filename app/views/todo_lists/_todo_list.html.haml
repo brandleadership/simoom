@@ -7,14 +7,14 @@
   - if action == :complete
     %td
       - if todo_list.state.to_i == TodoList::STATE_DONE
-        = link_to 'Eröffnen', todo_list_path(todo_list, 'todo_list[state]' => TodoList::STATE_UNDONE, :week_id => @week.id), :remote => true, :method => :put, :class => :button
+        = link_to 'Eröffnen', todo_list_path(todo_list, 'todo_list[state]' => TodoList::STATE_UNDONE, :week_id => @week.id), :remote => true, :method => :put, :class => 'btn primary small'
       - else
-        = link_to 'Abschliessen', todo_list_path(todo_list, 'todo_list[state]' => TodoList::STATE_DONE, :week_id => @week.id), :remote => true, :method => :put, :class => :button
+        = link_to 'Abschliessen', todo_list_path(todo_list, 'todo_list[state]' => TodoList::STATE_DONE, :week_id => @week.id), :remote => true, :method => :put, :class => 'btn primary small'
 
   - elsif action == :edit
     %td
-      = link_to 'Aus Woche entfernen', weeks_todo_list_path(WeekTodoList.find_by_week_id_and_todo_list_id(@week.id, todo_list.id)), :method => :delete, :remote => true, :class => :button
+      = link_to 'Aus Woche entfernen', weeks_todo_list_path(WeekTodoList.find_by_week_id_and_todo_list_id(@week.id, todo_list.id)), :method => :delete, :remote => true, :class => 'btn error small'
 
   - else
     %td
-      = link_to 'Hinzufügen', weeks_todo_lists_path(:week_id => params[:week_id].presence, :todo_list_id => todo_list.id ), :remote => true, :method => :post, :class => :button
+      = link_to 'Hinzufügen', weeks_todo_lists_path(:week_id => params[:week_id].presence, :todo_list_id => todo_list.id ), :remote => true, :method => :post, :class => 'btn primary small'

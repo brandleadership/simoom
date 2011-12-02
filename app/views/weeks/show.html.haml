@@ -1,16 +1,20 @@
-.block.grey
-  .block
-    %h1= week_name
-    = link_to 'Diese Woche bearbeiten', edit_week_path(@week)
+- content_for :page_title do
+  = week_name
+
+- content_for :sidebar do
+  .well
+    = link_to 'Woche bearbeiten', edit_week_path(@week), :class => 'btn primary'
+    %br
+    %br
     - unless @week.done?
-      #week-done
-        = simple_form_for @week, :remote => true do |f|
-          = f.input :done, :as => :hidden, :input_html => { :value => Week::STATE_DONE }
-          = f.submit 'Woche abschliessen'
-  .block
-    = render 'weeks/completed_hours'
-  %table#todo-lists
-    = render_todo_lists(@week.todo_lists, :complete)
-  - if @week.todo_lists.present?
-    .block
-      =link_to 'Generate PDF', week_path(@week, :format => :pdf)
+      = simple_form_for @week, :remote => true do |f|
+        = f.input :done, :as => :hidden, :input_html => { :value => Week::STATE_DONE }
+        = f.submit 'Woche abschliessen', :class => 'btn error'
+      
+    - if @week.todo_lists.present?
+      =link_to 'Karten drucken', week_path(@week, :format => :pdf), :class => 'btn success'
+
+= render 'weeks/completed_hours'
+
+%table#todo-lists
+  = render_todo_lists(@week.todo_lists, :complete)

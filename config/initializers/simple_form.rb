@@ -90,4 +90,21 @@ SimpleForm.setup do |config|
 
   # When false, do not use translations for labels, hints or placeholders.
   # config.translate = true
+  
+  config.hint_class = "hint input"
+  config.error_class = 'error input'
+  config.wrapper_class = :clearfix
+  config.wrapper_error_class = :error
+  config.browser_validations = false
+end
+
+
+SimpleForm::Inputs.constants.each do |klazz|
+  next if klazz == :Base
+  "SimpleForm::Inputs::#{klazz.to_s}".constantize.class_eval do
+    def input_with_surrounding_div
+      @builder.template.content_tag :div, input_without_surrounding_div, :class => "input"
+    end
+    alias_method_chain :input, :surrounding_div
+  end
 end

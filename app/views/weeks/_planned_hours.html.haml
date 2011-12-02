@@ -1,3 +1,4 @@
-%h2= "Es sind #{@week.planned_hours}h von #{@week.available_hours}h eingeplant"
-- if @week.planned_hours > @week.available_hours
-  .error-notice Es sind mehr Stunden eingeplant als verfügbar sind!
+- if @week.planned_hours.to_i > @week.available_hours.to_i
+  .alert-message.warning.error= "Es sind mehr Stunden eingeplant als verfügbar sind! <b>(#{@week.planned_hours}/#{@week.available_hours}h)</b>".html_safe
+- else
+  .alert-message.warning.warning= "Es sind <b>#{@week.planned_hours}h</b> von <b>#{@week.available_hours || 0}h</b> eingeplant".html_safe

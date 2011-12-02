@@ -6,8 +6,8 @@ gem 'mysql2'
 gem 'haml-rails'
 gem 'simple_form'
 gem 'prawn'
-
 gem 'compass', '0.12.alpha.0'
+gem 'compass_twitter_bootstrap'
 gem 'therubyracer'
 
 # Gems used only for assets and not required

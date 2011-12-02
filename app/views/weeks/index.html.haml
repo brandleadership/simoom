@@ -1,8 +1,11 @@
-.block.grey
-  %h1 Wochenübersicht
-  %ul.list
-    - @weeks.each do |week|
-      %li
+- content_for :page_title do
+  Wochenübersicht
+
+%table
+  - @weeks.each do |week|
+    %tr
+      %td{ :width => 300 }
         %p= "Woche #{week.nr}"
-        = link_to 'bearbeiten', edit_week_path(week)
-        = link_to 'löschen', week_path(week), :method => :delete, :confirm => "Woche ##{week.nr} wirklich löschen?"
+      %td
+        = link_to 'Löschen', week_path(week), :method => :delete, :confirm => "Woche ##{week.nr} wirklich löschen?", :class => 'btn small error'
+        = link_to 'Bearbeiten', edit_week_path(week), :class => 'btn small primary'

@@ -1,21 +1,27 @@
 !!!
 %html
   %head
-    %title Simoom
-    = stylesheet_link_tag    "application"
+    %meta{ :charset => 'utf-8' }
+    = stylesheet_link_tag "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    .app
-      .row.header
-        %ul.h-list
-          %li Simoom
-          %li
-            %ul.h-list
-              %li= link_to 'Aktuelle Woche', current_week_path
-              %li= link_to 'Alle Wochen', weeks_path
-              %li= link_to 'Neue Woche anlegen', new_week_path, :class => :button
-          %li Letzte Synchronisation vor X Minuten
-          %li= link_to 'Logout', '#'
-      .row
-        = yield
+    .topbar
+      .fill
+        .container
+          %a.brand{ :href => root_path } Simoom
+          %ul.nav
+            %li.active= link_to 'Aktuelle Woche', current_week_path
+            %li= link_to 'Alle Wochen', weeks_path
+            %li= link_to 'Neue Woche anlegen', new_week_path, :class => :button
+    .container
+      .content
+        .page-header
+          %h1
+            = yield :page_title
+            %small= yield :page_tagline
+        .row
+          .span10
+            = yield
+          .span6
+            = yield :sidebar

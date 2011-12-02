@@ -39,6 +39,10 @@ module Simoom
 
     # Enable the asset pipeline
     config.assets.enabled = true
+
+    # Compass integration
+    config.sass.load_paths << Compass::Frameworks['compass'].stylesheets_directory
+    config.sass.load_paths << Compass::Frameworks['twitter_bootstrap'].stylesheets_directory
     
     config.generators do |g|
       g.template_engine :haml

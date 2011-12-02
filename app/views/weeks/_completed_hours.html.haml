@@ -1,4 +1,6 @@
-- if @week.completed_hours >= @week.available_hours
-  %h2= "Geschafft! #{@week.completed_hours}h von #{@week.planned_hours}h sind erledigt!"
+- if @week.completed_hours.to_i >= @week.available_hours.to_i
+  .alert-message.success
+    %p= "Geschafft! <b>#{@week.completed_hours}h</b> von <b>#{@week.planned_hours}h</b> sind erledigt!".html_safe
 - else
-  %h2= "Es sind #{@week.completed_hours}h von #{@week.planned_hours}h erledigt. Auf geht's!"
+  .alert-message.warning
+    %p= "Es sind <b>#{@week.completed_hours}h</b> von <b>#{@week.planned_hours}h</b> erledigt. Auf geht's!".html_safe

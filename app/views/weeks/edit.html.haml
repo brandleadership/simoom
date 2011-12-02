@@ -1,17 +1,19 @@
-.col.wide.grey
-  .block
-    %h1 
-      Woche
-      = @week.nr
-      bearbeiten
-    = render 'form'
-  #planned-hours.block
-    = render 'planned_hours'
-  %table#todo-lists
-    = render_todo_lists(@week.todo_lists, :edit)
-.col.side.blue
-  .block
-    = simple_form_for :todo_lists, :url => todo_lists_path(:week_id => @week.id), :remote => true, :method => :get do |f|
-      = f.input :project_id, :collection => @available_projects
-      = f.submit
+- content_for :page_title do
+  = "Woche #{@week.nr} bearbeiten"
+
+= render 'form'
+
+%hr
+%h2 Todo-Listen in dieser Woche
+%br
+%table#todo-lists
+  = render_todo_lists(@week.todo_lists, :edit)
+
+- content_for :sidebar do
+  .well
+    = simple_form_for :todo_lists, :url => todo_lists_path(:week_id => @week.id), :html => { :class => 'form-stacked' }, :remote => true, :method => :get do |f|
+      %fieldset
+        %legend Todo-Listen laden
+        = f.input :project_id, :collection => @available_projects, :label => 'Projekt auswählen'
+        = f.submit 'Todo Listen anzeigen', :class => 'btn primary'
   %table.todo-lists
