@@ -18,6 +18,12 @@ describe Basecamp::Importer do
     it 'initializes all project with a status' do
       Project.all.each { |project| project.status.should_not be_nil}
     end
-
+    
+    it 'matches correctly formatted project names' do
+      (Basecamp::Importer::P_NUMBER_MATCHER =~ 'B-Dachungen - P12345').should be_true
+      (Basecamp::Importer::P_NUMBER_MATCHER =~ 'Alfred Müller Websiteentwicklung - P12345').should be_true
+      (Basecamp::Importer::P_NUMBER_MATCHER =~ 'Alfred - Fritz - Müller / Bretzelkönig - P12345').should be_true
+      (Basecamp::Importer::P_NUMBER_MATCHER =~ 'Internes').should be_false
+    end
   end
 end
