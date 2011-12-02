@@ -6,7 +6,7 @@ class TodoListsController < ApplicationController
     @project = Project.find(params[:todo_lists][:project_id]) rescue nil
     @week = Week.find(params[:week_id])
 
-    @todo_lists = @project.present? ? todo_lists_without_week_for_project(@week, @project) : TodoList.all
+    @todo_lists = @project.present? ? todo_lists_without_week_for_project(@week, @project) : TodoList.all.by_position
     respond_with @todo_lists
   end
 
@@ -26,7 +26,7 @@ class TodoListsController < ApplicationController
 private
 
   def todo_lists_without_week_for_project(week, project)
-    project.todo_lists.uncomplete.reject do |item|
+    project.todo_lists.by_position.uncomplete.reject do |item|
       week.todo_list_ids.include? item.id
     end
   end

@@ -10,6 +10,7 @@ class TodoList < ActiveRecord::Base
   has_many :weeks, :through => :week_todo_lists
 
   default_scope order('state ASC')
+  scope :by_position, order('position ASC')
   scope :uncomplete, where('state = ?', STATE_UNDONE)
 
   #

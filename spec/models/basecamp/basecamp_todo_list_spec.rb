@@ -4,7 +4,7 @@ describe Basecamp::TodoList do
   describe '#extract_attributes' do
     context 'without any estimates' do
       before :each do
-        @basecamp_todo_list = Basecamp::TodoList.new(:id => nil, :name => nil, :description => nil, :completed => nil)
+        @basecamp_todo_list = Basecamp::TodoList.new(:id => nil, :name => nil, :description => nil, :completed => nil, :position => 1)
         @attributes = @basecamp_todo_list.extract_attributes
         @todo_list = ::TodoList.new(@attributes)
       end
@@ -16,7 +16,7 @@ describe Basecamp::TodoList do
     
     context 'when estimate is available' do
       before :each do
-        @basecamp_todo_list = Basecamp::TodoList.new(:id => 1, :name => 'Dummy Todo List', :description => '45h', :completed => false)
+        @basecamp_todo_list = Basecamp::TodoList.new(:id => 1, :name => 'Dummy Todo List', :description => '45h', :completed => false, :position => 2)
         @attributes = @basecamp_todo_list.extract_attributes
         @todo_list = ::TodoList.new(@attributes)
       end
